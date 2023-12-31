@@ -16,6 +16,8 @@ Plug 'nvim-lua/popup.nvim'
 
 Plug 'arcticicestudio/nord-vim'
 
+Plug 'SirVer/ultisnips'
+
 call plug#end()
 
 if has('termguicolors')
@@ -114,18 +116,26 @@ require'nvim-treesitter.configs'.setup {
 END
 
 " coc-vim
-imap <Tab> <Plug>(coc-snippets-expand)
 
-imap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ CheckBackspace() ? "\<TAB>" :
+inoremap <silent><expr> <C-d>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<C-d>" :
       \ coc#refresh()
+inoremap <expr><C-e> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+" ulti-snippets
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<a-tab>"
 
 inoremap jh <Esc>
 
@@ -133,10 +143,6 @@ augroup vimtex
 	au!
 	au User VimtexEventCompiling VimtexView
 augroup END
-
-" coc-snippets
-let g:coc_snippet_prev = '<A-Tab>'
-let g:coc_snippet_next = '<Tab>'
 
 " vim-snippets
 "let g:UltiSnipsExpandTrigger       = '<Tab>'    " use Tab to expand snippets
