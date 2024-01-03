@@ -185,7 +185,7 @@ pacman -S xorg xorg-server xorg-xinit picom i3-wm
 ```
 ...
 
-picom &
+picom --config /home/username/.config/picom/picom.conf &
 exec i3
 ```
 
