@@ -22,7 +22,7 @@ loadkeys es
 ## Particionar disco
 
 Crear tres particiones:
-* Partición EFI approx. 512M)
+* Partición EFI (approx. 512M)
 * Partición root ```/``` (Al menos 1G)
 * Memoria swap (opcional, 1G)
 
@@ -117,7 +117,7 @@ Nombre de la máquina
 echo username > /etc/hostname
 ```
 
-Editar  hosts en```/etc/hosts``` y añadir
+Editar  hosts en ```/etc/hosts``` y añadir
 ```
 127.0.0.1       localhost
 ::1             localhost
@@ -242,7 +242,7 @@ exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
 ## Paquetes extra
 ```
-pacman -S kitty neovim zathura zathura-pdf-mupdf firefox texlive-basic texlive-latex texlive-latexrecommended texlive-fontsrecommended texlive-fontsextra texlive-xetex texlive-luatex texlive-bibtexextra texlive-mathscience texlive-binextra texlive-latexextra brightnessctl scrot dunst rofi feh python xclip nodejs npm mesa-amber
+pacman -S kitty neovim zathura zathura-pdf-mupdf firefox texlive-basic texlive-latex texlive-latexrecommended texlive-fontsrecommended texlive-fontsextra texlive-xetex texlive-luatex texlive-bibtexextra texlive-mathscience texlive-binextra texlive-latexextra brightnessctl scrot dunst rofi feh python xclip nodejs npm mesa-amber python-pyx biber xdotool
 ```
 
 ## Fuentes
@@ -277,7 +277,7 @@ Instalar plugin manager para zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-syntax-highlighting, autosiggestions, sudo y powerlever10k
+syntax-highlighting, autosuggestions, sudo y powerlever10k
 ```
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
