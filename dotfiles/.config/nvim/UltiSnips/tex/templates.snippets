@@ -1,4 +1,4 @@
-snippet phy-art "Spanish applied math/physics article document enviroment" i
+snippet phy-art "Physics article" A
 \documentclass[letterpaper]{article} %Artículo tamaño carta
 \usepackage[left=2.0cm,right=2.0cm,top=2.5cm,bottom=2.5cm,headheight=1.0cm]{geometry} %Márgenes
 \usepackage[utf8]{inputenc} %Formato de codificación
@@ -113,9 +113,8 @@ snippet phy-art "Spanish applied math/physics article document enviroment" i
 \end{document}
 endsnippet
 
-snippet math-art "Spanish math article document enviroment" i
-\documentclass[letterpaper]{article} %Artículo tamaño carta
-\usepackage[left=2.0cm,right=2.0cm,top=2.5cm,bottom=2.5cm,headheight=1.0cm]{geometry} %Márgenes
+snippet math-art "Mathematics article" A
+\documentclass[letterpaper]{article} %Artículo tamaño carta \usepackage[left=2.0cm,right=2.0cm,top=2.5cm,bottom=2.5cm,headheight=1.0cm]{geometry} %Márgenes
 \usepackage[utf8]{inputenc} %Formato de codificación
 \usepackage[activeacute,spanish,es-tabla,es-lcroman]{babel} %Acentos, 'Figura' para gráficas y 'Tabla' para tablas
 \usepackage{amsthm} %Símbolos
@@ -300,7 +299,7 @@ snippet math-art "Spanish math article document enviroment" i
 \end{document}
 endsnippet
 
-snippet math-ex "Spanish math exercises enviroment" i
+snippet math-ex "Ejercicios" A
 \documentclass[letterpaper]{article} %Artículo tamaño carta
 \usepackage[left=2.0cm,right=2.0cm,top=2.5cm,bottom=1.5cm,headheight=1.0cm]{geometry} %Márgenes
 \usepackage[utf8]{inputenc} %Formato de codificación
@@ -454,62 +453,36 @@ snippet math-ex "Spanish math exercises enviroment" i
 \end{document}
 endsnippet
 
-snippet writing "Writing template" i
-\documentclass[letterpaper,11pt]{article} %Artículo tamaño carta
-\usepackage[left=2.0cm,right=2.0cm,top=2.5cm,bottom=2.5cm,headheight=1.0cm]{geometry} %Márgenes
-\usepackage[activeacute,spanish,es-tabla,es-lcroman]{babel} %Acentos, 'Figura' para gráficas y 'Tabla' para tablas
-\usepackage{fancyhdr} %Línea horizontal del encabezado
-\usepackage{fontspec} %Fuentes personalizadas
-\usepackage{multicol} %Multicolumnas
-\usepackage{titlesec} %Estilo de secciones
-\usepackage{xcolor} %Colores
-\usepackage{xpatch} %Colores para la regla del encabezado
+snippet min-art "Minimal article" A
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{libertine}
+\usepackage{libertinust1math}
 
-\definecolor{gray}{HTML}{484848}
-\definecolor{lightgray}{HTML}{808080}
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
-\setmainfont{Crimson Text} %Fuente personalizada
-\newfontfamily\smallcaps{EB Garamond} %Versalitas
-
-\pagestyle{fancy} %Estilo de encabezado y pie de página para todo el documento
-\fancyhf{}
-\rhead{\textcolor{gray}{\thepage\hspace{0.8cm}}}
-\lhead{\textcolor{gray}{\smallcaps{\hspace{0.8cm} $1}}}
-\renewcommand{\headruleskip}{2mm}
-\fancyheadoffset{0.8cm}
-
-\fancypagestyle{first} %Estilo de encabezado y pie de página para la página "first"
-{
-	\pagestyle{fancy}
-	\fancyhf{}
-	\rhead{\textcolor{gray}{\thepage\hspace{0.8cm}}}
-	\lhead{\textcolor{gray}{\smallcaps{\hspace{0.8cm} $1}}}
-}
-
-\xpretocmd\headrule{\color{lightgray}}{}{\PatchFailed}
-
-\titleformat{\section} %Estilo de las secciones
-{\centering\large}{\thesection}{0.5em}{}
-\titleformat{\subsection} %Estilo de las subsecciones
-{\centering}{\thesubsection}{0.5em}{}
-
-\titlespacing*{\section}{0pt}{0.3cm}{0.3cm} %Espaciado para las secciones
-\titlespacing*{\subsection}{0pt}{0.3cm}{0.3cm} %Espaciado para las subsecciones
-
-\date{\today}
-\author{} 
-
-\linespread{1.0} %Interlineado
-\setlength\parindent{0pt} %Sangría de párrafos
-\setlength\columnsep{0.5cm} %Separación entre columnas
-%\setlength{\parskip}{0pt} %Separación entre párrafos
+\title{$1}
+\author{$2}
 
 \begin{document}
-	\thispagestyle{first}
-	
-	$2%\begin{multicols}{2}
-	\section*{\textcolor{gray}{$4}}
-	\par \textcolor{gray}{$5}
-	$3%\end{multicols}
+\maketitle$3
+
+\end{document}
+endsnippet
+
+snippet min-writing "Minimal writing template" A
+\documentclass{article}
+\usepackage{ebgaramond}
+\usepackage{libertinust1math}
+
+\title{$1}
+\author{$2}
+
+\begin{document}
+\maketitle$3
+
 \end{document}
 endsnippet

@@ -136,8 +136,19 @@ endfunction
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<a-tab>"
+"let g:UltiSnipsJumpOrExpandTrigger = "<tab>"
 
-inoremap jh <Esc>
+nnoremap <leader>u <Cmd>call UltiSnips#RefreshSnippets()<CR>
+
+inoremap <silent> ( <Cmd>call UltiSnips#Anon('($1)','','i','',1)<cr>
+inoremap <silent> { <Cmd>call UltiSnips#Anon('{$1}','','i','',1)<cr>
+inoremap <silent> [ <Cmd>call UltiSnips#Anon('[$1]','','i','',1)<cr>
+inoremap <silent> " <Cmd>call UltiSnips#Anon('"$1"','','i','',1)<cr>
+"inoremap <silent> ' <Cmd>call UltiSnips#Anon("'$1'",'','i','',1)<cr>
+
+inoremap kj <Esc>
+map j gj
+map k gk
 
 augroup vimtex
 	au!
@@ -148,6 +159,17 @@ augroup END
 "let g:UltiSnipsExpandTrigger       = '<Tab>'    " use Tab to expand snippets
 "let g:UltiSnipsJumpForwardTrigger  = '<Tab>'    " use Tab to move forward through tabstops
 "let g:UltiSnipsJumpBackwardTrigger = '<A-Tab>'  " use Shift-Tab to move backward through tabstops
+
+" Preservar identación al ajustar las líneas
+
+set breakindent
+set formatoptions=l
+set lbr
+
+" line number and indentation
+
+set nu
+set numberwidth=1
 
 " Tab size
 set tabstop=4
@@ -196,7 +218,14 @@ set tabline=%!Tabline()
 
 filetype plugin indent on
 syntax enable
-let g:vimtex_view_method = 'zathura'
+
 let g:vimtex_compiler_method = 'latexmk'
+let g:vimtex_view_method = 'zathura'
+let g:vimtex_view_forward_search_on_start = 'false'
+let g:vimtex_quickfix_mode = 0
+let g:vimtex_view_automatic = 0
 
 colorscheme nord
+
+" Copiar todo el documento al clipboard
+nmap <C-d> ggVG"+y
