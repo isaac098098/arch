@@ -242,7 +242,7 @@ exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
 ## Paquetes extra
 ```
-pacman -S kitty neovim zathura zathura-pdf-mupdf firefox texlive-basic texlive-latex texlive-latexrecommended texlive-fontsrecommended texlive-fontsextra texlive-xetex texlive-luatex texlive-bibtexextra texlive-mathscience texlive-binextra texlive-latexextra brightnessctl scrot dunst rofi feh python xclip nodejs npm mesa-amber python-pyx biber xdotool
+pacman -S kitty neovim zathura zathura-pdf-mupdf firefox texlive-basic texlive-latex texlive-latexrecommended texlive-fontsrecommended texlive-fontsextra texlive-xetex texlive-luatex texlive-bibtexextra texlive-mathscience texlive-binextra texlive-latexextra texlive-langspanish texlive-langeuropean brightnessctl scrot dunst rofi feh python xclip nodejs npm mesa-amber python-pyx biber xdotool
 ```
 
 ## Fuentes

@@ -60,22 +60,22 @@ endsnippet
 
 context "math()"
 snippet oio "Open interval" iA
-\: ]$1[$0
+\: ]$1,$2[$0
 endsnippet
 
 context "math()"
 snippet cic " Closed interval" iA
-\: ]$1[$0
+\: [$1,$2]$0
 endsnippet
 
 context "math()"
 snippet cio "Left closed and right opened interval" iA
-[$1[ \: $0
+[$1,$2[ \: $0
 endsnippet
 
 context "math()"
 snippet oic "Right closed and left opened interval" iA
-\: ]$1]$0
+\: ]$1,$2]$0
 endsnippet
 
 #context "math()"
@@ -380,8 +380,8 @@ snippet bsu "Subindex only union" iA
 endsnippet
 
 context "math()"
-snippet I "Belongs to" iA
-\in
+snippet In "Belongs to" iA
+\in 
 endsnippet
 
 context "math()"
@@ -397,6 +397,11 @@ endsnippet
 context "math()"
 snippet .Q "Rational numbers" iA
 \Q
+endsnippet
+
+context "math()"
+snippet .R "Real numbers" iA
+\R
 endsnippet
 
 context "math()"
@@ -450,12 +455,12 @@ snippet mn "Minimum of a set" iA
 endsnippet
 
 context "math()"
-snippet cn "Numerable/finite family" iA
+snippet sn "Numerable/finite family" iA
 \left\\{$1_\{$2\}\right\\}_\{$2=$3\}^\{$4\}
 endsnippet
 
 context "math()"
-snippet ci "Indexed family" iA
+snippet si "Indexed family" iA
 \left\\{$1_\{$2\}\right\\}_\{$2\in $3\}$4
 endsnippet
 
@@ -546,4 +551,14 @@ endsnippet
 context "math()"
 snippet nsg "Normal subgroup" iA
 \triangleleft
+endsnippet
+
+context "math()"
+snippet im "Implies" iA
+\implies 
+endsnippet
+
+context "math()"
+snippet ex "Exists" iA
+\exists\:
 endsnippet
