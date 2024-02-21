@@ -167,4 +167,4 @@ let g:vimtex_view_automatic = 0
 " Copiar todo el documento al clipboard
 nmap <C-d> ggVG"+y
 
-set guicursor=i:ver10
+set guicursor=i:hor10
