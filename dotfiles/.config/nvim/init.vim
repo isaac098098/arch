@@ -124,6 +124,7 @@ inoremap <silent> ( <Cmd>call UltiSnips#Anon('($1)','','i','',1)<cr>
 inoremap <silent> { <Cmd>call UltiSnips#Anon('{$1}','','i','',1)<cr>
 inoremap <silent> [ <Cmd>call UltiSnips#Anon('[$1]','','i','',1)<cr>
 inoremap <silent> " <Cmd>call UltiSnips#Anon('"$1"','','i','',1)<cr>
+inoremap <silent> \| <Cmd>call UltiSnips#Anon("\\|$1\\|",'','i','',1)<cr>
 "inoremap <silent> ' <Cmd>call UltiSnips#Anon("'$1'",'','i','',1)<cr>
 
 inoremap kj <Esc>
@@ -159,7 +160,7 @@ set shiftwidth=4
 
 let g:vimtex_compiler_method = 'latexmk'
 let g:vimtex_view_method = 'zathura'
-let g:vimtex_view_forward_search_on_start = 'true'
+let g:vimtex_view_forward_search_on_start = 'false'
 let g:vimtex_quickfix_mode = 0
 let g:vimtex_view_automatic = 0
 

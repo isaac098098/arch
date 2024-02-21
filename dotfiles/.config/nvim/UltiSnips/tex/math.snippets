@@ -25,7 +25,12 @@ endsnippet
 
 context "math()"
 snippet sm "Sum" iA
-\sum_{$1}^{$2} $3 $0
+\sum_{$1}^{$2} $3
+endsnippet
+
+context "math()"
+snippet Sm "Sum with lower index only" iA
+\sum_{$1} $2
 endsnippet
 
 context "math()"
@@ -40,27 +45,32 @@ endsnippet
 
 context "math()"
 snippet ind "Definite integral" iA
-\int_{$1}^{$2} $3 \textrm{d}$4 $0
+\int_{$1}^{$2} $3 \textrm{d}$4
+endsnippet
+
+context "math()"
+snippet inL "Lower integral" iA
+\int_{$1} $2 \textrm{d}$3
 endsnippet
 
 context "math()"
 snippet ini "Indefinite integral" iA
-\int $1 \textrm{d}$2 $0
+\int $1 \textrm{d}$2
 endsnippet
 
 context "math()"
 snippet inu "Upper improper integral" iA
-\int_{$1}^{\infty} $2 \text{d}$3 $0
+\int_{$1}^{\infty} $2 \text{d}$3
 endsnippet
 
 context "math()"
 snippet inl "Lower improper integral" iA
-\int_{-\infty}^{$1} $2 \text{d}$3 $0
+\int_{-\infty}^{$1} $2 \text{d}$3
 endsnippet
 
 context "math()"
 snippet int "Totally improper integral" iA
-\int_{-\infty}^{\infty} $1 \text{d}$3 $0
+\int_{-\infty}^{\infty} $1 \text{d}$3
 endsnippet
 
 context "math()"
@@ -94,12 +104,12 @@ endsnippet
 
 context "math()"
 snippet fn "Function" iA
-$1: $2 \longrightarrow $3 $0
+$1: $2 \longrightarrow $3
 endsnippet
 
 context "math()"
 snippet ef "Explicit function" iA
-$1 \longmapsto $2 $0
+$1 \longmapsto $2
 endsnippet
 
 context "math()"
@@ -134,10 +144,10 @@ snippet set "Set" iA
 \left\\{$1 \: | \: $2\right\\}
 endsnippet
 
-context "math()"
-snippet | "Absolute value " iA
-|$1|
-endsnippet
+#context "math()"
+#snippet | "Absolute value " iA
+#|$1|
+#endsnippet
 
 context "math()"
 snippet fa "For all" iA
@@ -496,7 +506,7 @@ endsnippet
 
 context "math()"
 snippet mod "Equivalence mod n" iA
-$1\equiv $2 \\:\\:(\textrm{mod }$3)
+$1\equiv $2 \\:\\:\textrm{mod }$3
 endsnippet
 
 context "math()"
@@ -571,4 +581,24 @@ endsnippet
 context "math()"
 snippet tm "Cross product" iA
 \times
+endsnippet
+
+context "math()"
+snippet dvv "Divides" iA
+\mid 
+endsnippet
+
+context "math()"
+snippet dvn "Not divides" iA
+\nmid 
+endsnippet
+
+context "math()"
+snippet ht "Hat symbol" iA
+\hat{$1}
+endsnippet
+
+context "math()"
+snippet ne "Not equal" iA
+\neq 
 endsnippet
