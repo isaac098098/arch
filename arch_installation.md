@@ -394,3 +394,7 @@ xset -dpms
 
 ## Rofi
 ``` .config/rofi/config.rasi```
+
+## Refrescar archivos de LaTeX
+
+```sudo fmtutil-sys --all```
