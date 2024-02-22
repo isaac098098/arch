@@ -112,3 +112,5 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 bindkey '^ ' autosuggest-accept
+
+export PATH="/home/isaac09809/.local/bin:$PATH"
