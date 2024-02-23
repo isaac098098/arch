@@ -162,6 +162,7 @@ assign [class="obsidian"] $ws7
 assign [class="Spotify Premium"] $ws9
 assign [class="Spotify"] $ws9
 assign [class="pomatez"] $ws10
+for_window [title="Pomatez$"] move container to workspace 10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
