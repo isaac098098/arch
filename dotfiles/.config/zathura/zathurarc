@@ -1,20 +1,22 @@
-set guioptions ""
+#set guioptions ""
 
 set highlight-transparency 0
 
-set font "IosevkaTermNerdFont Bold 12"
+set font "IosevkaTermNerdFont Bold 11"
+
+set statusbar-basename 1
 
 # Base16 Nord
 # Author: arcticicestudio
 
 set default-bg                  "#2E3440"
-set default-fg                  "#FFFFFF"
+set default-fg                  "#81A1C1"
 
 set statusbar-fg                "#FFFFFF"
-set statusbar-bg                "#434C5E"
+set statusbar-bg                "#3B4252"
 
 set inputbar-bg                 "#2E3440"
-set inputbar-fg                 "#FFFFFF"
+set inputbar-fg                 "#81A1C1"
 
 set notification-bg             "#2E3440"
 set notification-fg             "#FFFFFF"
