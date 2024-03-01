@@ -398,12 +398,12 @@ snippet bu "Union symbol" iA
 endsnippet
 
 context "math()"
-snippet Bi "Big intersection index and superindex" iA
+snippet BIs "Big intersection index and superindex" iA
 \bigcap_{$1}^{$2} $3
 endsnippet
 
 context "math()"
-snippet Bu "Big union index and superindex" iA
+snippet BUs "Big union index and superindex" iA
 \bigcup_{$1}^{$2} $3
 endsnippet
 
@@ -413,17 +413,17 @@ snippet BIi "Subindex only intersection" iA
 endsnippet
 
 context "math()"
-snippet BIu "Subindex only union" iA
+snippet BUi "Subindex only union" iA
 \bigcup_{$1} $2
 endsnippet
 
 context "math()"
-snippet BI "Big intersection symbol" iA
+snippet Bi "Big intersection symbol" iA
 \bigcap 
 endsnippet
 
 context "math()"
-snippet BU "Big union symbol" iA
+snippet Bu "Big union symbol" iA
 \bigcup 
 endsnippet
 
@@ -512,17 +512,71 @@ snippet si "Indexed family" iA
 \left\\{$1_\{$2\}\right\\}_\{$2\in $3\}$4
 endsnippet
 
-context "math()"
-snippet lbe "Label equation" iA
+snippet lbe "Label equation" i
 \label{eqn:$1}
 endsnippet
 
-snippet rfe "Equation reference" iA
+snippet lbt "Label theorem" i
+\label{thm:$1}
+endsnippet
+
+snippet lbp "Label proposition" i
+\label{prop:$1}
+endsnippet
+
+snippet lbc "Label corollary" i
+\label{cor:$1}
+endsnippet
+
+snippet lbl "Label lemma" i
+\label{lemma:$1}
+endsnippet
+
+snippet lbd "Label definition" i
+\label{def:$1}
+endsnippet
+
+snippet lbr "Label remark" i
+\label{rmk:$1}
+endsnippet
+
+snippet lbx "Label exercise" i
+\label{ex:$1}
+endsnippet
+
+snippet rfe "Equation reference" i
 \ref{eqn:$1}
 endsnippet
 
-context "math()"
-snippet nmt "Number this" iA
+snippet rft "Theorem reference" i
+\ref{thm:$1}
+endsnippet
+
+snippet rfp "Proposition reference" i
+\ref{prop:$1}
+endsnippet
+
+snippet rfc "Corollary reference" i
+\ref{cor:$1}
+endsnippet
+
+snippet rfl "Lemma reference" i
+\ref{lemma:$1}
+endsnippet
+
+snippet rfd "Definition reference" i
+\ref{def:$1}
+endsnippet
+
+snippet rfr "Remark reference" i
+\ref{rmk:$1}
+endsnippet
+
+snippet rfx "Exercise reference" i
+\ref{ex:$1}
+endsnippet
+
+snippet nmt "Number this" i
 \numberthis
 endsnippet
 
@@ -562,7 +616,12 @@ endsnippet
 
 context "math()"
 snippet hs "Horizontal space" iA
-\hspace*{$1.$2cm}
+\hspace*{$1cm}
+endsnippet
+
+context "math()"
+snippet vs "Vertical space" iA
+\vspace*{$1cm}
 endsnippet
 
 context "math()"
@@ -735,6 +794,16 @@ snippet gq "Greather or equal than" iA
 \geq 
 endsnippet
 
+context "math()"
+snippet .T "Topology symbol" iA
+\tp 
+endsnippet
+
+context "math()"
+snippet dis "Displaystyle" iA
+\displaystyle 
+endsnippet
+
 # Arrays
 
 ## Generic
@@ -859,7 +928,7 @@ snippet mt3aT "3x3 Table matrix with Automatic indexing" iA
 $1_{11} & $1_{12} & $1_{13} \\\\
 $1_{21} & $1_{22} & $1_{23} \\\\
 $1_{31} & $1_{32} & $1_{33} \\\\
-\end{matrix
+\end{matrix}
 endsnippet
 
 context "math()"
@@ -938,7 +1007,7 @@ $1_{11} & $1_{12} & $1_{13} & $1_{14} \\\\
 $1_{21} & $1_{22} & $1_{23} & $1_{24} \\\\
 $1_{31} & $1_{32} & $1_{33} & $1_{34} \\\\
 $1_{41} & $1_{42} & $1_{43} & $1_{44} \\\\
-\end{matrix
+\end{matrix}
 endsnippet
 
 context "math()"
@@ -1025,7 +1094,7 @@ $1_{21} & $1_{22} & $1_{23} & $1_{24} & $1_{25} \\\\
 $1_{31} & $1_{32} & $1_{33} & $1_{34} & $1_{35} \\\\
 $1_{41} & $1_{42} & $1_{43} & $1_{44} & $1_{45} \\\\
 $1_{51} & $1_{52} & $1_{53} & $1_{54} & $1_{55} \\\\
-\end{matrix
+\end{matrix}
 endsnippet
 
 context "math()"
@@ -1128,6 +1197,7 @@ $1_{1} \\\\
 $1_{2} \\\\
 \vdots \\\\
 $1_{$2}
+\end{pmatrix}
 endsnippet
 
 context "math()"
@@ -1157,6 +1227,7 @@ snippet vt2aP "2x1 Parenthesis column Vector with automatic indexing" iA
 \begin{pmatrix}
 $1_{1} \\\\
 $1_{2} \\\\
+\end{pmatrix}
 endsnippet
 
 context "math()"
@@ -1182,6 +1253,7 @@ snippet vt2fP "2x1 Parenthesis column Vector with free indexing" iA
 \begin{pmatrix}
 $1 \\\\
 $2 \\\\
+\end{pmatrix}
 endsnippet
 
 context "math()"
@@ -1211,6 +1283,7 @@ snippet vt3aP "3x1 Parenthesis column Vector with automatic indexing" iA
 $1_{1} \\\\
 $1_{2} \\\\
 $1_{3} \\\\
+\end{pmatrix}
 endsnippet
 
 context "math()"
@@ -1239,6 +1312,7 @@ snippet vt3fP "3x1 Parenthesis column Vector with free indexing" iA
 $1 \\\\
 $2 \\\\
 $3 \\\\
+\end{pmatrix}
 endsnippet
 
 context "math()"
@@ -1271,6 +1345,7 @@ $1_{1} \\\\
 $1_{2} \\\\
 $1_{3} \\\\
 $1_{4} \\\\
+\end{pmatrix}
 endsnippet
 
 context "math()"
@@ -1302,6 +1377,7 @@ $1 \\\\
 $2 \\\\
 $3 \\\\
 $4 \\\\
+\end{pmatrix}
 endsnippet
 
 context "math()"
@@ -1337,6 +1413,7 @@ $1_{2} \\\\
 $1_{3} \\\\
 $1_{4} \\\\
 $1_{5} \\\\
+\end{pmatrix}
 endsnippet
 
 context "math()"
@@ -1371,6 +1448,7 @@ $2 \\\\
 $3 \\\\
 $4 \\\\
 $5 \\\\
+\end{pmatrix}
 endsnippet
 
 context "math()"
