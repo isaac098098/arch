@@ -174,14 +174,14 @@ endsnippet
 snippet ee "Exercise environment" i
 
 \begin{exercise}
-$1
+\textnormal{$1}
 \end{exercise}
 endsnippet
 
 snippet "(^|[^a-zA-Z])Ee" "Exercise with note" ri
 `!p snip.rv = match.group(1)`
 \begin{exercise}[$1]
-$2
+\textnormal{$2}
 \end{exercise}
 endsnippet
 
@@ -367,4 +367,16 @@ endsnippet
 
 snippet ct "Cite from bibliography" i
 \cite{$1}
+endsnippet
+
+snippet phs "Phantom section" i
+\phantomsection
+endsnippet
+
+snippet phs "Add content to TOC" i
+\addcontentsline{toc}{section}{${1:Section name}}
+endsnippet
+
+snippet mkb "Add section name to header" i
+\markboth{${1:Section name}}{$1}
 endsnippet
