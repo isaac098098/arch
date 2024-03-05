@@ -174,7 +174,7 @@ endsnippet
 snippet ee "Exercise environment" i
 
 \begin{exercise}
-\textnormal{$1}
+$1
 \end{exercise}
 endsnippet
 
@@ -185,15 +185,18 @@ snippet "(^|[^a-zA-Z])Ee" "Exercise with note" ri
 \end{exercise}
 endsnippet
 
-snippet pp "New paragraph" i 
+snippet pp "Big paragraph skip" i 
 
-\par $1
+\bigskip
+
+$1
 endsnippet
 
-snippet ps "New paragraph with space" i 
+snippet pm "Med paragraph skip" i 
 
-\par $ $
-\par $1
+\medskip
+
+$1
 endsnippet
 
 snippet ss "Solution environment" i
@@ -379,4 +382,8 @@ endsnippet
 
 snippet mkb "Add section name to header" i
 \markboth{${1:Section name}}{$1}
+endsnippet
+
+snippet txpdf "Change section bookmark name" i
+\texorpdfstring{$1}{$2}
 endsnippet
