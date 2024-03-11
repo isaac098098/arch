@@ -125,8 +125,7 @@ snippet ef "Explicit function" iA
 $1 \longmapsto $2
 endsnippet
 
-context "math()"
-snippet fc "Function defined by cases" iA
+snippet fc "Function defined by cases" i
 
 \begin{equation*}
 	$1 =
@@ -555,35 +554,35 @@ snippet lbx "Label exercise" i
 endsnippet
 
 snippet rfe "Equation reference" i
-\ref{eqn:$1}
+\eqref{eqn:$1}
 endsnippet
 
 snippet rft "Theorem reference" i
-\ref{thm:$1}
+\eqref{thm:$1}
 endsnippet
 
 snippet rfp "Proposition reference" i
-\ref{prop:$1}
+\eqref{prop:$1}
 endsnippet
 
 snippet rfc "Corollary reference" i
-\ref{cor:$1}
+\eqref{cor:$1}
 endsnippet
 
 snippet rfl "Lemma reference" i
-\ref{lemma:$1}
+\eqref{lemma:$1}
 endsnippet
 
 snippet rfd "Definition reference" i
-\ref{def:$1}
+\eqref{def:$1}
 endsnippet
 
 snippet rfr "Remark reference" i
-\ref{rmk:$1}
+\eqref{rmk:$1}
 endsnippet
 
 snippet rfx "Exercise reference" i
-\ref{ex:$1}
+\eqref{ex:$1}
 endsnippet
 
 snippet nmt "Number this" i
@@ -597,12 +596,22 @@ endsnippet
 
 context "math()"
 snippet ev "Equivalent" iA
-\equiv$1
+\equiv $1
+endsnippet
+
+context "math()"
+snippet Ev "Equivalent" iA
+\not\equiv $1
 endsnippet
 
 context "math()"
 snippet mod "Equivalence mod n" iA
-$1\equiv $2 \\\\:\\:\mathrm{mod\:}$3
+$1\equiv $2 \\:\\:\textnormal{mód\:}$3
+endsnippet
+
+context "math()"
+snippet Mod "Not equivalent mod n" iA
+$1\not\equiv $2 \\:\\:\textnormal{mód\:}$3
 endsnippet
 
 context "math()"
@@ -812,6 +821,36 @@ endsnippet
 context "math()"
 snippet dis "Displaystyle" iA
 \displaystyle 
+endsnippet
+
+context "math()"
+snippet 2mcd "Máximo común divisor de 2 números" iA
+\textnormal{mcd}($1,$2)
+endsnippet
+
+context "math()"
+snippet 3mcd "Máximo común divisor de 3 números" iA
+\textnormal{mcd}($1,$2,$3)
+endsnippet
+
+context "math()"
+snippet nmcd "Máximo común divisor de n números" iA
+\textnormal{mcd}($1,\ldots,$2)
+endsnippet
+
+context "math()"
+snippet 2mcm "Mínimo común múltiplo de 2 números" iA
+\textnormal{mcm}($1,$2)
+endsnippet
+
+context "math()"
+snippet 3mcm "Mínimo común múltiplo de 3 números" iA
+\textnormal{mcm}($1,$2,$3)
+endsnippet
+
+context "math()"
+snippet nmcm "Mínimo común múltiplo de n números" iA
+\textnormal{mcm}($1,\ldots,$2)
 endsnippet
 
 # Arrays

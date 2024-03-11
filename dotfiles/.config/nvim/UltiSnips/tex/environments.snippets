@@ -14,7 +14,7 @@ endsnippet
 snippet enum "Enumerate environment" i
 
 
-\begin{enumerate}\adjustpenalty
+\begin{enumerate}[label=\textnormal{(\arabic*)}]\adjustpenalty
 	\item $1
 \end{enumerate}
 endsnippet
@@ -78,6 +78,13 @@ snippet aa "Align(ed) environment" i
 \begin{align*}
 	$1
 \end{align*}
+endsnippet
+
+snippet gg "Gather(ed) environment" i
+
+\begin{gather*}
+	$1
+\end{gather*}
 endsnippet
 
 snippet pn "Proposition environment" i
@@ -376,7 +383,7 @@ snippet phs "Phantom section" i
 \phantomsection
 endsnippet
 
-snippet phs "Add content to TOC" i
+snippet atoc "Add content to TOC" i
 \addcontentsline{toc}{section}{${1:Section name}}
 endsnippet
 
