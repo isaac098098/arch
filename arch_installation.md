@@ -398,3 +398,12 @@ xset -dpms
 ## Refrescar archivos de LaTeX
 
 ```sudo fmtutil-sys --all```
+
+## Termux Texlive
+Si el paquete está desactualizado, buscar un repositorio utilizable en ctan mirros status. 
+
+termux_properties -> allow_external_apps = true
+
+```texlinks```
+```updmap -sys```
+```termux-allow-storage```
