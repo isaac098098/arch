@@ -141,8 +141,10 @@ $8
 endsnippet
 
 snippet math-notes "Mathematics notes" b
-\documentclass[letterpaper,twoside,12pt]{article}
-\usepackage[left=3.0cm,right=3.0cm,top=2.5cm,bottom=2.0cm,headheight=0.8cm]{geometry} %Headheight controla la distancia de la regla del encabezado a su texto inferior
+\documentclass[letterpaper,twoside]{article}
+\usepackage{anyfontsize} %Usar cualquier tamaño de letra
+\usepackage[fontsize=13pt]{scrextend} %Aumentar tamaño de letra
+\usepackage[left=3.0cm,right=3.0cm,top=3.0cm,bottom=2.5cm,headheight=0.8cm]{geometry} %Headheight controla la distancia de la regla del encabezado a su texto inferior
 \usepackage[utf8]{inputenc} %Formato de codificación
 \usepackage[activeacute,spanish,es-tabla,es-lcroman]{babel} %Acentos, 'Figura' para gráficas y 'Tabla' para tablas
 \usepackage{amsthm} %Teoremas
@@ -174,7 +176,8 @@ snippet math-notes "Mathematics notes" b
 \usepackage{titlesec} %Estilo de secciones
 %\usepackage{lipsum} %Texto de prueba
 %\usepackage{libertine}
-%\usepackage{libertinust1math}
+%\usepackage[libertine]{newtxmath}
+%\usepackage{libertinust1math} %Deprecated
 %\usepackage{relsize} %Aumentar escala del documento completo
 %\usepackage{scalerel} %Aumentar tamaño de símbolos
 
@@ -251,7 +254,7 @@ snippet math-notes "Mathematics notes" b
 
 % Tabla de contenidos
 
-\addto{\captionsspanish}{\renewcommand{\contentsname}{Índice general}} %Título
+\addto{\captionsspanish}{\renewcommand{\contentsname}{\large Índice general}} %Título
 \renewcommand{\cfttoctitlefont}{\scshape\Large} %Estilo del título
 \renewcommand{\cftsecfont}{\itshape} %Estilo del título de las secciones
 \renewcommand{\cftsecpagefont}{} %Estilo del título de las secciones de la página
@@ -302,11 +305,12 @@ snippet math-notes "Mathematics notes" b
 % Macros específicos de las notas
 
 \newcommand{\tp}{\mathcal{T}}
+\newcommand{\vc}{\textnormal{\O}}
 
 %\let\oldcap\cap
-%\renewcommand{\cap}{\mathbin{\scaleobj{1.3}{\oldcap}}}
+%\renewcommand{\cap}{\mathbin{\scaleobj{1.1}{\oldcap}}}
 %\let\oldcup\cup
-%\renewcommand{\cup}{\mathbin{\scaleobj{1.3}{\oldcup}}}
+%\renewcommand{\cup}{\mathbin{\scaleobj{1.1}{\oldcup}}}
 
 %\let\oldpartial\partial
 %\renewcommand{\partial}{\mathbin{\scaleobj{1.15}{\oldpartial}}}
@@ -315,12 +319,12 @@ snippet math-notes "Mathematics notes" b
 %\renewcommand{\subset}{\mathbin{\scaleobj{1.15}{\oldsubset}}}
 
 %\let\oldsubset\subset
-%\renewcommand{\subset}{\mathbin{\scaleobj{1.15}{\oldsubset}}}
+%\renewcommand{\subset}{\mathbin{\scaleobj{1.1}{\oldsubset}}}
 %\let\oldsubseteq\subseteq
 %\renewcommand{\subseteq}{\mathbin{\scaleobj{1.1}{\oldsubseteq}}}
 
 %\let\oldsupset\supset
-%\renewcommand{\supset}{\mathbin{\scaleobj{1.15}{\oldsupset}}}
+%\renewcommand{\supset}{\mathbin{\scaleobj{1.1}{\oldsupset}}}
 %\let\oldsupseteq\supseteq
 %\renewcommand{\supseteq}{\mathbin{\scaleobj{1.1}{\oldsupseteq}}}
 
@@ -409,6 +413,18 @@ snippet math-notes "Mathematics notes" b
 \theoremstyle{exercise}
 \newtheorem{exercise}{Ejercicio}[section]
 
+\newtheoremstyle{example}
+{\topsep} %Separación superior
+{\topsep} %Separación inferior
+{\rmfamily} %Fuente del cuerpo
+{0em} %Sangría
+{\scshape} %Fuente del encabezado
+{.} %Puntuación después del encabezado
+{0.5em} %Espacio después del encabezado
+{\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ (#3)}}} %Ejemplo [número] [nombre]
+\theoremstyle{example}
+\newtheorem{example}{Ejemplo}[section]
+
 \begin{document}
 \maketitle
 \tableofcontents
@@ -426,8 +442,10 @@ $4
 endsnippet
 
 snippet math-ex "Math exercises" b
-\documentclass[letterpaper,twoside,12pt]{article}
-\usepackage[left=3.0cm,right=3.0cm,top=2.5cm,bottom=2.0cm,headheight=0.8cm]{geometry} %Headheight controla la distancia de la regla del encabezado a su texto inferior
+\documentclass[letterpaper,twoside]{article}
+\usepackage{anyfontsize} %Usar cualquier tamaño de letra
+\usepackage[fontsize=13pt]{scrextend} %Aumentar tamaño de letra
+\usepackage[left=3.0cm,right=3.0cm,top=3.0cm,bottom=2.5cm,headheight=0.8cm]{geometry} %Headheight controla la distancia de la regla del encabezado a su texto inferior
 \usepackage[utf8]{inputenc} %Formato de codificación
 \usepackage[activeacute,spanish,es-tabla,es-lcroman]{babel} %Acentos, 'Figura' para gráficas y 'Tabla' para tablas
 \usepackage{amsthm} %Símbolos
@@ -458,7 +476,8 @@ snippet math-ex "Math exercises" b
 \usepackage{titlesec} %Estilo de secciones
 %\usepackage{lipsum} %Texto de prueba
 %\usepackage{libertine}
-%\usepackage{libertinust1math}
+%\usepackage[libertine]{newtxmath}
+%\usepackage{libertinust1math} %Deprecated
 %\usepackage{relsize} %Aumentar escala del documento completo
 %\usepackage{scalerel} %Aumentar tamaño de símbolos
 \usepackage{cellspace,makecell} %Necesario para el alineamiento Sc de tablas
@@ -536,7 +555,7 @@ snippet math-ex "Math exercises" b
 
 % Tabla de contenidos
 
-\addto{\captionsspanish}{\renewcommand{\contentsname}{Índice general}} %Título
+\addto{\captionsspanish}{\renewcommand{\contentsname}{\large Índice general}} %Título
 \renewcommand{\cfttoctitlefont}{\scshape\Large} %Estilo del título
 \renewcommand{\cftsecfont}{\itshape} %Estilo del título de las secciones
 \renewcommand{\cftsecpagefont}{} %Estilo del título de las secciones de la página
@@ -587,11 +606,12 @@ snippet math-ex "Math exercises" b
 % Macros específicos de las notas
 
 \newcommand{\tp}{\mathcal{T}}
+\newcommand{\vc}{\textnormal{\O}}
 
 %\let\oldcap\cap
-%\renewcommand{\cap}{\mathbin{\scaleobj{1.3}{\oldcap}}}
+%\renewcommand{\cap}{\mathbin{\scaleobj{1.1}{\oldcap}}}
 %\let\oldcup\cup
-%\renewcommand{\cup}{\mathbin{\scaleobj{1.3}{\oldcup}}}
+%\renewcommand{\cup}{\mathbin{\scaleobj{1.1}{\oldcup}}}
 
 %\let\oldpartial\partial
 %\renewcommand{\partial}{\mathbin{\scaleobj{1.15}{\oldpartial}}}
@@ -600,12 +620,12 @@ snippet math-ex "Math exercises" b
 %\renewcommand{\subset}{\mathbin{\scaleobj{1.15}{\oldsubset}}}
 
 %\let\oldsubset\subset
-%\renewcommand{\subset}{\mathbin{\scaleobj{1.15}{\oldsubset}}}
+%\renewcommand{\subset}{\mathbin{\scaleobj{1.1}{\oldsubset}}}
 %\let\oldsubseteq\subseteq
 %\renewcommand{\subseteq}{\mathbin{\scaleobj{1.1}{\oldsubseteq}}}
 
 %\let\oldsupset\supset
-%\renewcommand{\supset}{\mathbin{\scaleobj{1.15}{\oldsupset}}}
+%\renewcommand{\supset}{\mathbin{\scaleobj{1.1}{\oldsupset}}}
 %\let\oldsupseteq\supseteq
 %\renewcommand{\supseteq}{\mathbin{\scaleobj{1.1}{\oldsupseteq}}}
 
@@ -694,6 +714,18 @@ snippet math-ex "Math exercises" b
 {\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ (#3)}}} %Ejercicio [número] [nombre]
 \theoremstyle{exercise}
 \newtheorem{exercise}{Ejercicio}[section]
+
+\newtheoremstyle{example}
+{\topsep} %Separación superior
+{\topsep} %Separación inferior
+{\rmfamily} %Fuente del cuerpo
+{0em} %Sangría
+{\scshape} %Fuente del encabezado
+{.} %Puntuación después del encabezado
+{0.5em} %Espacio después del encabezado
+{\thmname{#1}\thmnumber{ #2}\textnormal{\thmnote{ (#3)}}} %Ejemplo [número] [nombre]
+\theoremstyle{example}
+\newtheorem{example}{Ejemplo}[section]
 
 \begin{document}
 \maketitle

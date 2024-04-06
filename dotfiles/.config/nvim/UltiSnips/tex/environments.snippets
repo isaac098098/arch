@@ -1,5 +1,6 @@
 snippet it "New item" i
 
+
 \item $1
 endsnippet
 
@@ -89,6 +90,7 @@ endsnippet
 
 snippet pn "Proposition environment" i
 
+
 \begin{proposition}
 $1
 \end{proposition}
@@ -96,12 +98,14 @@ endsnippet
 
 snippet "(^|[^a-zA-Z])Pn" "Proposition with note" ri
 `!p snip.rv = match.group(1)`
+
 \begin{proposition}[$1]
 $2
 \end{proposition}
 endsnippet
 
 snippet th "Theorem environment" i
+
 
 \begin{theorem}
 $1
@@ -110,12 +114,14 @@ endsnippet
 
 snippet "(^|[^a-zA-Z])Th" "Theorem with note" ri
 `!p snip.rv = match.group(1)`
+
 \begin{theorem}[$1]
 $2
 \end{theorem}
 endsnippet
 
 snippet cc "Corollary environment" i
+
 
 \begin{corollary}
 $1
@@ -124,12 +130,14 @@ endsnippet
 
 snippet "(^|[^a-zA-Z])Cc" "Corollary with note" ri
 `!p snip.rv = match.group(1)`
+
 \begin{corollary}[$1]
 $2
 \end{corollary}
 endsnippet
 
 snippet lm "Lemma environment" i
+
 
 \begin{lemma}
 $1
@@ -138,12 +146,14 @@ endsnippet
 
 snippet "(^|[^a-zA-Z])Lm" "Lema with note" ri
 `!p snip.rv = match.group(1)`
+
 \begin{lemma}[$1]
 $2
 \end{lemma}
 endsnippet
 
 snippet def "Definition environment" i
+
 
 \begin{definition}
 $1
@@ -152,12 +162,14 @@ endsnippet
 
 snippet "(^|[^a-zA-Z])Def" "Definition with note" ri
 `!p snip.rv = match.group(1)`
+
 \begin{definition}[$1]
 $2
 \end{definition}
 endsnippet
 
 snippet rm "Remark environment" i
+
 
 \begin{remark}
 $1
@@ -166,6 +178,7 @@ endsnippet
 
 snippet "(^|[^a-zA-Z])Rm" "Remark with note" ri
 `!p snip.rv = match.group(1)`
+
 \begin{remark}[$1]
 $2
 \end{remark}
@@ -180,6 +193,7 @@ endsnippet
 
 snippet ee "Exercise environment" i
 
+
 \begin{exercise}
 $1
 \end{exercise}
@@ -187,9 +201,26 @@ endsnippet
 
 snippet "(^|[^a-zA-Z])Ee" "Exercise with note" ri
 `!p snip.rv = match.group(1)`
+
 \begin{exercise}[$1]
-\textnormal{$2}
+
 \end{exercise}
+endsnippet
+
+snippet ej "Example environment" i
+
+
+\begin{example}
+$1
+\end{example}
+endsnippet
+
+snippet "(^|[^a-zA-Z])Ej" "Example with note" ri
+`!p snip.rv = match.group(1)`
+
+\begin{example}[$1]
+
+\end{example}
 endsnippet
 
 snippet pp "Big paragraph skip" i 
