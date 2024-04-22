@@ -130,8 +130,8 @@ snippet fc "Function defined by cases" i
 \begin{equation*}
 	$1 =
 		\begin{cases}
-			$2 & \text{si} \: $3 \\\\ %\hfil
-			$4 & \text{si} \: $5
+			$2 & \text{si} \: $3 \\\\ $4%\hfil
+			$5 & \text{$6} \: $7
 		\end{cases}
 \end{equation*}
 endsnippet
@@ -219,6 +219,11 @@ endsnippet
 context "math()"
 snippet av "Absolute value" iA
 \left|$1\right|
+endsnippet
+
+context "math()"
+snippet lg "Logarithm" iA
+\log 
 endsnippet
 
 context "math()"
@@ -563,6 +568,14 @@ snippet lbx "Label exercise" i
 \label{ex:$1}
 endsnippet
 
+snippet lbm "Label example" i
+\label{em:$1}
+endsnippet
+
+snippet lbi "Label item" i
+\label{it:$1}
+endsnippet
+
 snippet rfe "Equation reference" i
 \eqref{eqn:$1}
 endsnippet
@@ -595,8 +608,20 @@ snippet rfx "Exercise reference" i
 \eqref{ex:$1}
 endsnippet
 
+snippet rfm "Example reference" i
+\eqref{em:$1}
+endsnippet
+
+snippet rfm "Item reference" i
+\eqref{it:$1}
+endsnippet
+
 snippet nmt "Number this" i
 \numberthis
+endsnippet
+
+snippet enref "Enumarate environment reference format" i
+,ref=\the$1.\textnormal{\arabic*}
 endsnippet
 
 context "math()"
@@ -655,7 +680,7 @@ endsnippet
 
 context "math()"
 snippet cdt "Central dots" iA
-\cdots 
+\cdots
 endsnippet
 
 context "math()"
@@ -665,17 +690,17 @@ endsnippet
 
 context "math()"
 snippet ldt "Lower dots" iA
-\ldots 
+\ldots
 endsnippet
 
 context "math()"
 snippet vdt "Vertical dots" iA
-\vdots 
+\vdots
 endsnippet
 
 context "math()"
 snippet ddt "Diagonal dots" iA
-\ddots 
+\ddots
 endsnippet
 
 context "math()"
@@ -720,7 +745,7 @@ endsnippet
 
 context "math()"
 snippet dvn "Not divides" iA
-\nmid 
+\centernot\mid 
 endsnippet
 
 context "math()"

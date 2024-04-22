@@ -1,6 +1,5 @@
 snippet it "New item" i
 
-
 \item $1
 endsnippet
 
@@ -254,6 +253,17 @@ snippet secn "Unnumbered section" i
 
 
 \section*{$1}
+
+$2
+endsnippet
+
+snippet Secn "Unnumbered section in TOC" i
+
+
+\phantomsection
+\section*{$1}
+\markboth{$1}{$1}
+\addcontentsline{toc}{section}{$1}
 
 $2
 endsnippet

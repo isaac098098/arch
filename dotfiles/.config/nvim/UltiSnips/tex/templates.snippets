@@ -180,6 +180,7 @@ snippet math-notes "Mathematics notes" b
 %\usepackage{libertinust1math} %Deprecated
 %\usepackage{relsize} %Aumentar escala del documento completo
 %\usepackage{scalerel} %Aumentar tamaño de símbolos
+%\usepackage{centernot} %Para el símbolo "no divide"
 
 % Matemáticas
 
@@ -228,7 +229,7 @@ snippet math-notes "Mathematics notes" b
 
 %El primer argumento es la numeración de la sección, el segundo el espacio entre dicha numeración y el texto
 \titleformat{\section}{\centering\large\scshape}{\thesection.}{0.5em}{}
-\titleformat{\subsection}{\centering\normalsize\scshape}{\thesubsection}{0.5em}{}
+\titleformat{\subsection}{\centering\normalsize\scshape}{\thesubsection.}{0.5em}{}
 
 % Regla superior
 
@@ -260,8 +261,9 @@ snippet math-notes "Mathematics notes" b
 \renewcommand{\cftsecpagefont}{} %Estilo del título de las secciones de la página
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} %Puntos para las secciones
 \renewcommand{\cftsecaftersnum}{.} %Punto después del número de la sección
+\renewcommand{\cftsubsecaftersnum}{.} %Punto después del número de la subsección
 \renewcommand{\thesection}{\normalfont\arabic{section}} %Formato de las secciones
-\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}.} %Formato de las subsecciones
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}} %Formato de las subsecciones
 %\renewcommand{\thesection}{\normalfont\Roman{section}} %Formato de las secciones
 %\renewcommand{\thesubsection}{\Roman{section}.\arabic{subsection}} %Formato de las subsecciones
 %\renewcommand{\cftsecafterpnum}{\vskip2pt} %Separación entre secciones
@@ -288,9 +290,9 @@ snippet math-notes "Mathematics notes" b
 
 % Estructura de una sección sin número (en orden)
 
+%\phantomsection %hyperref
 %\section*{Prólogo}
 %\markboth{Prólogo}{Prólogo} %Mostrar correctamente el nombre de la sección en el header
-%\phantomsection %hyperref
 %\addcontentsline{toc}{section}{Prólogo} %Añadir a la tabla de contenidos
 
 % Macros
@@ -301,11 +303,11 @@ snippet math-notes "Mathematics notes" b
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\F}{\mathbb{F}}
+\newcommand{\vc}{\textnormal{\O}}
 
 % Macros específicos de las notas
 
 \newcommand{\tp}{\mathcal{T}}
-\newcommand{\vc}{\textnormal{\O}}
 
 %\let\oldcap\cap
 %\renewcommand{\cap}{\mathbin{\scaleobj{1.1}{\oldcap}}}
@@ -481,6 +483,7 @@ snippet math-ex "Math exercises" b
 %\usepackage{relsize} %Aumentar escala del documento completo
 %\usepackage{scalerel} %Aumentar tamaño de símbolos
 \usepackage{cellspace,makecell} %Necesario para el alineamiento Sc de tablas
+%\usepackage{centernot} %Para el símbolo "no divide"
 
 % Matemáticas
 
@@ -529,7 +532,7 @@ snippet math-ex "Math exercises" b
 
 %El primer argumento es la numeración de la sección, el segundo el espacio entre dicha numeración y el texto
 \titleformat{\section}{\centering\large\scshape}{\thesection.}{0.5em}{}
-\titleformat{\subsection}{\centering\normalsize\scshape}{\thesubsection}{0.5em}{}
+\titleformat{\subsection}{\centering\normalsize\scshape}{\thesubsection.}{0.5em}{}
 
 % Regla superior
 
@@ -561,8 +564,9 @@ snippet math-ex "Math exercises" b
 \renewcommand{\cftsecpagefont}{} %Estilo del título de las secciones de la página
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} %Puntos para las secciones
 \renewcommand{\cftsecaftersnum}{.} %Punto después del número de la sección
+\renewcommand{\cftsubsecaftersnum}{.} %Punto después del número de la subsección
 \renewcommand{\thesection}{\normalfont\arabic{section}} %Formato de las secciones
-\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}.} %Formato de las subsecciones
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}} %Formato de las subsecciones
 %\renewcommand{\thesection}{\normalfont\Roman{section}} %Formato de las secciones
 %\renewcommand{\thesubsection}{\Roman{section}.\arabic{subsection}} %Formato de las subsecciones
 %\renewcommand{\cftsecafterpnum}{\vskip2pt} %Separación entre secciones
@@ -575,9 +579,9 @@ snippet math-ex "Math exercises" b
 
 % Estructura de una sección sin número (en orden)
 
+%\phantomsection %hyperref
 %\section*{Prólogo}
 %\markboth{Prólogo}{Prólogo} %Mostrar correctamente el nombre de la sección en el header
-%\phantomsection %hyperref
 %\addcontentsline{toc}{section}{Prólogo} %Añadir a la tabla de contenidos
 
 % Metadata
@@ -602,11 +606,11 @@ snippet math-ex "Math exercises" b
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\F}{\mathbb{F}}
+\newcommand{\vc}{\textnormal{\O}}
 
 % Macros específicos de las notas
 
 \newcommand{\tp}{\mathcal{T}}
-\newcommand{\vc}{\textnormal{\O}}
 
 %\let\oldcap\cap
 %\renewcommand{\cap}{\mathbin{\scaleobj{1.1}{\oldcap}}}
