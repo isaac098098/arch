@@ -1,10 +1,10 @@
-#set guioptions ""
-
-set highlight-transparency 0
+set guioptions ""
 
 set font "IosevkaTermNerdFont Bold 11"
 
 set statusbar-basename 1
+
+set selection-clipboard clipboard
 
 # Base16 Nord
 # Author: arcticicestudio
@@ -27,8 +27,8 @@ set notification-error-fg       "#FFFFFF"
 set notification-warning-bg     "#2E3440"
 set notification-warning-fg     "#FFFFFF"
 
-set highlight-color             "#EBCB8B"
-set highlight-active-color      "#81A1C1"
+set highlight-color             "rgba(235,203,139,0)"
+set highlight-active-color      "rgba(129,161,193,0)"
 
 set completion-bg               "#3B4252"
 set completion-fg               "#81A1C1"
