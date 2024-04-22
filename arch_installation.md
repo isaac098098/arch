@@ -408,3 +408,6 @@ termux_properties -> allow_external_apps = true
 ```updmap -sys```
 ```mktexmf -all```
 ```termux-allow-storage```
+
+Buscar paquetes perdidos en instalación incompleta o rota
+```tlmgr -repository https://mirror.ctan.org/systems/texlive/tlnet update --self --all --reinstall-forcibly-removed```
