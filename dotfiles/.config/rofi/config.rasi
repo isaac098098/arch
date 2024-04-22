@@ -1,5 +1,5 @@
 configuration {
-    font: "IosevkaTermNerdFont 13";
+    font: "IosevkaTermNerdFont Bold 13";
     line-margin: 10;
 
     display-ssh:    "";
