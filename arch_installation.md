@@ -406,4 +406,5 @@ termux_properties -> allow_external_apps = true
 
 ```texlinks```
 ```updmap -sys```
+```mktexmf -all```
 ```termux-allow-storage```

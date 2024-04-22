@@ -12,7 +12,7 @@ Plug 'lervag/vimtex'
 
 ""Plug 'nvim-lua/popup.nvim'
 
-Plug 'arcticicestudio/nord-vim'
+Plug 'nordtheme/vim'
 
 Plug 'SirVer/ultisnips'
 
@@ -163,6 +163,18 @@ let g:vimtex_view_method = 'zathura'
 let g:vimtex_view_forward_search_on_start = 'false'
 let g:vimtex_quickfix_mode = 0
 let g:vimtex_view_automatic = 0
+
+let g:vimtex_compiler_latexmk_engines = {
+        \ '_'                : '-pdf',
+        \ 'pdfdvi'           : '-pdfdvi',
+        \ 'pdfps'            : '-pdfps',
+        \ 'pdflatex'         : '-pdf',
+        "\ '_'           : '-lualatex',
+		"\ '_'          : '-xelatex',
+        "\ 'context (pdftex)' : '-pdf -pdflatex=texexec',
+        \ 'context (luatex)' : '-pdf -pdflatex=context',
+        \ 'context (xetex)'  : '-pdf -pdflatex=''texexec --xtx''',
+        \}
 
 " Copiar todo el documento al clipboard
 nmap <C-d> ggVG"+y

@@ -220,8 +220,10 @@ bindsym $mod+w exec --no-startup-id setxkbmap us -variant intl
 default_border pixel 0
 default_floating_border none
 
-gaps inner 12
-gaps outer 0
+#gaps inner 0
+#gaps outer 0
+
+smart_gaps on
 
 focus_on_window_activation none
 
