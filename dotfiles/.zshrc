@@ -113,4 +113,8 @@ source $ZSH/oh-my-zsh.sh
 
 bindkey '^ ' autosuggest-accept
 
+XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CONFIG_HOME
+
 export PATH="/home/isaac09809/.local/bin:$PATH"
+export PATH="/usr/local/texlive/2024/bin/x86_64-linux:$PATH"

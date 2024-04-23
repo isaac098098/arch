@@ -217,13 +217,27 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 bindsym $mod+q exec --no-startup-id setxkbmap -layout latam
 bindsym $mod+w exec --no-startup-id setxkbmap us -variant intl
 
-default_border pixel 0
+# Colores de los bordes
+# 						Border 		Background	Text 		Indicator 	Child Border
+client.focused 			#FFFFFF		#FFFFFF		#FFFFFF		#88C0D0		#88C0D0
+client.focused_inactive	#FFFFFF 	#FFFFFF		#FFFFFF 	#2E3440		#2E3440
+client.unfocused		#FFFFFF 	#FFFFFF		#FFFFFF 	#2E3440		#2E3440
+client.urgent			#FFFFFF 	#FFFFFF 	#FFFFFF 	#FFFFFF		#FFFFFF
+client.placeholder		#FFFFFF 	#FFFFFF 	#FFFFFF 	#FFFFFF		#FFFFFF
+client.background		#FFFFFF		#FFFFFF 	#FFFFFF 	#FFFFFF		#FFFFFF
+
+#Apps sin bordes
+for_window [workspace="4"] border none
+
+# Tama~no de los bordes
+default_border pixel 3
 default_floating_border none
 
 #gaps inner 0
 #gaps outer 0
 
 smart_gaps on
+smart_borders on
 
 focus_on_window_activation none
 
@@ -238,5 +252,5 @@ bindsym $mod+Shift+a focus parent, focus parent, focus parent, focus parent, foc
 
 for_window [class="pomatez"] floating enable
 
-bindsym $mod+p exec --no-startup-id polybar-msg cmd show
+bindsym $mod+p exec --no-startup-id polybar-msg cmd show 
 bindsym $mod+o exec --no-startup-id polybar-msg cmd hide
