@@ -121,8 +121,8 @@ END
 
 " coc-vim
 
-:highlight CocFloating guibg=#1E1E2E
-:highlight CocMenuSel guibg=#313244
+:highlight CocFloating guibg=#313244
+:highlight CocMenuSel guibg=#45475a
 
 inoremap <silent><expr> <C-d>
       \ coc#pum#visible() ? coc#pum#next(1) :
