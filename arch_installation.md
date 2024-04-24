@@ -418,3 +418,8 @@ termux_properties -> allow_external_apps = true
 
 Buscar paquetes perdidos en instalación incompleta o rota
 ```tlmgr -repository https://mirror.ctan.org/systems/texlive/tlnet update --self --all --reinstall-forcibly-removed```
+
+## Rotación de pantalla
+### Wayland
+```pacman -S iio-sensor-proxy```
+```paru iio-hyprland-git```
