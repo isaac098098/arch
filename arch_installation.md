@@ -194,6 +194,13 @@ exec i3
 [[ $(fgconsole 2>/dev/null) == 1 ]] && exec startx --vt1
 ```
 
+## Para usar Hyprland (Wayland), descomentar la línea anterior en ~/.zprofile y agregar
+```
+if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
+    exec Hyprland
+fi
+```
+
 ## reboot
 ```
 setxkbmap -layout latam
