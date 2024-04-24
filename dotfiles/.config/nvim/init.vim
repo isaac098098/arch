@@ -8,7 +8,9 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 Plug 'nvim-tree/nvim-web-devicons'
 
-Plug 'nordtheme/vim'
+"Plug 'nordtheme/vim'
+
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
 Plug 'SirVer/ultisnips'
 
@@ -23,7 +25,7 @@ if has('termguicolors')
 	set termguicolors
 endif
 
-colorscheme nord
+colorscheme catppuccin" catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 
 lua << END
 
@@ -118,6 +120,9 @@ require'nvim-treesitter.configs'.setup {
 END
 
 " coc-vim
+
+:highlight CocFloating guibg=#1E1E2E
+:highlight CocMenuSel guibg=#313244
 
 inoremap <silent><expr> <C-d>
       \ coc#pum#visible() ? coc#pum#next(1) :
