@@ -213,5 +213,8 @@ let g:vimtex_compiler_latexmk_engines = {
 " Copiar todo el documento al clipboard
 nmap <C-d> ggVG"+y
 
+" Copiar al clipboard (Wayland), instalar wl-clipboard
+nnoremap "+y :call system("wl-copy", @") <CR>
+
 " Estilo del cursor
 set guicursor=i:hor10
