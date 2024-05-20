@@ -195,13 +195,25 @@ s(
 -- Superscripts, subscripts and dots
 
 s(
-	{trig = ":", dscr = "Superscript", snippetType="autosnippet", regTrig = true, wordTrig = false},
+	{trig = "([^%a])oo", dscr = "Superscript", snippetType="autosnippet", regTrig = true, wordTrig = false},
+	{f( function(_, snip) return snip.captures[1] end ),t("^"), },
+	{condition = in_mathzone}
+),
+ 
+s(
+	{trig = "([^%a])uu", dscr = "Subscript", snippetType="autosnippet", regTrig = true, wordTrig = false},
+	{f( function(_, snip) return snip.captures[1] end ),t("_"), },
+	{condition = in_mathzone}
+),
+
+s(
+	{trig = ":", dscr = "Complete superscript", snippetType="autosnippet", regTrig = true, wordTrig = false},
 	{f( function(_, snip) return snip.captures[1] end ),t("^{"), i(1), t("}")},
 	{condition = in_mathzone}
 ),
 
 s(
-	{trig = ";", dscr = "Subscript", snippetType="autosnippet", regTrig = true, wordTrig = false},
+	{trig = ";", dscr = "Complete subscript", snippetType="autosnippet", regTrig = true, wordTrig = false},
 	{f( function(_, snip) return snip.captures[1] end ),t("_{"), i(1), t("}")},
 	{condition = in_mathzone}
 ),
@@ -229,7 +241,7 @@ s(
 
 s(
 	{trig = "ldt", dscr = "Lower dots", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\ldots ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\ldots")},
 	{condition = in_mathzone}
 ),
 
@@ -690,6 +702,24 @@ s(
 ),
 
 s(
+	{trig = "([^%a])au", dscr = "Align", snippetType="autosnippet", regTrig = true, wordTrig = false},
+	{f( function(_, snip) return snip.captures[1] end ), t("&= ")},
+    {condition = in_mathzone}
+),
+
+s(
+	{trig = "([^%a])br", dscr = "Align", snippetType="autosnippet", regTrig = true, wordTrig = false},
+	{f( function(_, snip) return snip.captures[1] end ), t({" \\\\","&= "}), },
+    {condition = in_mathzone}
+),
+
+s(
+	{trig = "([^%a])Au", dscr = "Nested align", snippetType="autosnippet", regTrig = true, wordTrig = false},
+	{f( function(_, snip) return snip.captures[1] end ), t("&&= ")},
+    {condition = in_mathzone}
+),
+
+s(
 	{trig = "([^%a])land", dscr = "And symbol", snippetType="autosnippet", regTrig = true, wordTrig = false},
 	{f( function(_, snip) return snip.captures[1] end ), t("\\land ")},
     {condition = in_mathzone}
@@ -749,7 +779,7 @@ s(
 ),
 
 s(
-	{trig = "([^%a])ld", dscr = "Definite limit", snippetType="autosnippet", regTrig = true, wordTrig = false},
+	{trig = "([^%a])ll", dscr = "Definite limit", snippetType="autosnippet", regTrig = true, wordTrig = false},
 	{
         f( function(_, snip) return snip.captures[1] end ),
         t("\\lim_{"), i(1), t("\\to "), i(2), t("} ")

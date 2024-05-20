@@ -24,13 +24,13 @@ s(
 ),
 
 -- Quotation marks
-
-s(
-    {trig = "'", descr = "Single quotes", snippetType = "autosnippet", wordTrig = false},
-    {
-        t("'"), i(1), t("'")
-    }
-),
+--
+--s(
+    --{trig = "'", descr = "Single quotes", snippetType = "autosnippet", wordTrig = false},
+    --{
+        --t("'"), i(1), t("'")
+    --}
+--),
 
 s(
     {trig = "\"", descr = "Double quotes", snippetType = "autosnippet", wordTrig = false},

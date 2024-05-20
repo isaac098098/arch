@@ -10,7 +10,7 @@ s(
 -- Lists
 
 s(
-	{trig = "([^%a])it", dscr = "New item", snippetType="autosnippet", regTrig = true, wordTrig = false},
+	{trig = "([^%a])it", dscr = "New item", regTrig = true, wordTrig = false},
 	{t({"","\\item "}), i(1)}
 ),
 
@@ -119,7 +119,7 @@ s(
 -- Theorems
 
 s(
-	{trig = "([^%a])th", dscr = "Theorem", snippetType="autosnippet", regTrig = true, wordTrig = false},
+	{trig = "([^%a])th", dscr = "Theorem", regTrig = true, wordTrig = false},
 	{
 		t({"","\\begin{theorem}",""}), 
 		i(1), 
@@ -129,7 +129,7 @@ s(
 ),
 
 s(
-	{trig = "([^%a])Th", dscr = "Theorem with note", snippetType="autosnippet", regTrig = true, wordTrig = false},
+	{trig = "([^%a])Th", dscr = "Theorem with note", regTrig = true, wordTrig = false},
 	{
 		t({"","\\begin{theorem}["}),
 		i(1),
@@ -207,7 +207,7 @@ s(
 ),
 
 s(
-	{trig = "([^%a])def", dscr = "Definition", snippetType="autosnippet", regTrig = true, wordTrig = false},
+	{trig = "([^%a])def", dscr = "Definition", regTrig = true, wordTrig = false},
 	{
 		t({"","\\begin{definition}",""}), 
 		i(1), 
@@ -217,7 +217,7 @@ s(
 ),
 
 s(
-	{trig = "([^%a])Def", dscr = "Definition with note", snippetType="autosnippet", regTrig = true, wordTrig = false},
+	{trig = "([^%a])Def", dscr = "Definition with note", regTrig = true, wordTrig = false},
 	{
 		t({"","\\begin{definition}["}),
 		i(1),
@@ -239,7 +239,7 @@ s(
 ),
 
 s(
-	{trig = "([^%a])pr", dscr = "Proof", snippetType="autosnippet", regTrig = true, wordTrig = false},
+	{trig = "([^%a])pr", dscr = "Proof", regTrig = true, wordTrig = false},
 	{
 		t({"","\\begin{proof}",""}), 
 		i(1), 
@@ -271,7 +271,7 @@ s(
 ),
 
 s(
-	{trig = "([^%a])ej", dscr = "Example", snippetType="autosnippet", regTrig = true, wordTrig = false},
+	{trig = "([^%a])ej", dscr = "Example", regTrig = true, wordTrig = false},
 	{
 		t({"","\\begin{example}",""}), 
 		i(1), 
