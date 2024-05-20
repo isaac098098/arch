@@ -12,7 +12,9 @@ Plug 'nvim-tree/nvim-web-devicons'
 
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
+
+Plug 'L3MON4D3/LuaSnip', {'tag': 'v2.*', 'do': 'make install_jsregexp'}
 
 Plug 'nvim-lualine/lualine.nvim'
 
@@ -141,21 +143,86 @@ endfunction
 
 " ulti-snippets
 
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<a-tab>"
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<tab>"
+"let g:UltiSnipsJumpBackwardTrigger="<a-tab>"
 "let g:UltiSnipsJumpOrExpandTrigger = "<tab>"
 
-nnoremap <leader>u <Cmd>call UltiSnips#RefreshSnippets()<CR>
+"nnoremap <leader>u <Cmd>call UltiSnips#RefreshSnippets()<CR>
 
-inoremap <silent> ( <Cmd>call UltiSnips#Anon('($1)','','i','',1)<cr>
-inoremap <silent> { <Cmd>call UltiSnips#Anon('{$1}','','i','',1)<cr>
-inoremap <silent> [ <Cmd>call UltiSnips#Anon('[$1]','','i','',1)<cr>
-inoremap <silent> " <Cmd>call UltiSnips#Anon('"$1"','','i','',1)<cr>
-inoremap <silent> \| <Cmd>call UltiSnips#Anon("\\|$1\\|",'','i','',1)<cr>
+"inoremap <silent> ( <Cmd>call UltiSnips#Anon('($1)','','i','',1)<cr>
+"inoremap <silent> { <Cmd>call UltiSnips#Anon('{$1}','','i','',1)<cr>
+"inoremap <silent> [ <Cmd>call UltiSnips#Anon('[$1]','','i','',1)<cr>
+"inoremap <silent> " <Cmd>call UltiSnips#Anon('"$1"','','i','',1)<cr>
+"inoremap <silent> \| <Cmd>call UltiSnips#Anon("\\|$1\\|",'','i','',1)<cr>
 "inoremap <silent> ' <Cmd>call UltiSnips#Anon("'$1'",'','i','',1)<cr>
 
-inoremap kj <Esc>
+" LuaSnip
+
+" Load snippets from ~/.config/nvim/LuaSnip/
+lua require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/LuaSnip/"})
+
+nnoremap <leader>u <Cmd>lua require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/LuaSnip/"})<CR>
+
+lua << EOF
+
+-- Somewhere in your Neovim startup, e.g. init.lua
+require("luasnip").config.set_config({ -- Setting LuaSnip config
+
+  -- Enable autotriggered snippets
+  enable_autosnippets = true,
+
+  -- Use Tab (or some other key if you prefer) to trigger visual selection
+  --store_selection_keys = "<Tab>",
+})
+
+-- Undo snippet
+
+local untrigger = function()
+  -- get the snippet
+  local snip = require("luasnip").session.current_nodes[vim.api.nvim_get_current_buf()].parent.snippet
+  -- get its trigger
+  local trig = snip.trigger
+  -- replace that region with the trigger
+  local node_from, node_to = snip.mark:pos_begin_end_raw()
+  vim.api.nvim_buf_set_text(
+    0,
+    node_from[1],
+    node_from[2],
+    node_to[1],
+    node_to[2],
+    --{ trig }
+    {" "}
+  )
+  -- reset the cursor-position to ahead the trigger
+  vim.fn.setpos(".", { 0, node_from[1] + 1, node_from[2] + 1 + string.len(trig) })
+end
+
+vim.keymap.set({ "i", "s" }, "<C-i>", function()
+  if require("luasnip").in_snippet() then
+    untrigger()
+    require("luasnip").unlink_current()
+  end
+end, {
+  desc = "Undo a snippet",
+})
+
+EOF
+
+" Use Tab to expand and jump through snippets
+imap <silent><expr> jk luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
+"imap <silent><expr> ll luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<Tab>'
+smap <silent><expr> jk luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<Tab>'
+
+" Use Shift-Tab to jump backwards through snippets
+imap <silent><expr> lk luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
+smap <silent><expr> lk luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
+
+" Cycle forward through choice nodes with Control-f (for example)
+imap <silent><expr> <C-f> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-f>'
+smap <silent><expr> <C-f> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-f>'
+
+inoremap iu <Esc>
 map j gj
 map k gk
 
@@ -176,9 +243,11 @@ set lbr
 set nu
 set numberwidth=1
 
-" Tab size
+" Tabs
+iunmap <tab>
 set tabstop=4
 set shiftwidth=4
+set expandtab
 
 " vimtex para hyprland
 
