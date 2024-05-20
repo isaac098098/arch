@@ -195,13 +195,13 @@ s(
 -- Superscripts, subscripts and dots
 
 s(
-	{trig = "oo", dscr = "Superscript", snippetType="autosnippet", wordTrig = false},
+	{trig = "\\", dscr = "Superscript", snippetType="autosnippet", wordTrig = false},
 	{t("^")},
 	{condition = in_mathzone}
 ),
  
 s(
-	{trig = "uu", dscr = "Subscript", snippetType="autosnippet", wordTrig = false},
+	{trig = "´", dscr = "Subscript", snippetType="autosnippet", wordTrig = false},
 	{t("_")},
 	{condition = in_mathzone}
 ),
@@ -702,13 +702,13 @@ s(
 ),
 
 s(
-	{trig = "([^%a])au", dscr = "Align", snippetType="autosnippet", regTrig = true, wordTrig = false},
+	{trig = "([^%a])am", dscr = "Align", snippetType="autosnippet", regTrig = true, wordTrig = false},
 	{f( function(_, snip) return snip.captures[1] end ), t("&= ")},
     {condition = in_mathzone}
 ),
 
 s(
-	{trig = "([^%a])br", dscr = "Align", snippetType="autosnippet", regTrig = true, wordTrig = false},
+	{trig = "([^%a])Am", dscr = "Align", snippetType="autosnippet", regTrig = true, wordTrig = false},
 	{f( function(_, snip) return snip.captures[1] end ), t({" \\\\","&= "}), },
     {condition = in_mathzone}
 ),

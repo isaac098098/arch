@@ -288,7 +288,7 @@ s(
 ),
 
 s(
-	{trig = "([^%a])Sc", dscr = "Small caps", snippetType = "autosnippet", regTrig = true, wordTrig = false},
+	{trig = "([^%a])Sc", dscr = "Small caps", regTrig = true, wordTrig = false},
 	{f( function(_, snip) return snip.captures[1] end ), t("\\textsc{"), i(1), t("}")}
 ),
 
@@ -325,13 +325,13 @@ s(
 -- Characters
 
 s(
-	{trig = "([^%a])co", dscr = "Colon", snippetType = "autosnippet", regTrig = true, wordTrig = false},
+	{trig = "([^%a])co", dscr = "Colon", regTrig = true, wordTrig = false},
 	{f( function(_, snip) return snip.captures[1] end ), t(":")},
     {condition = in_mathzone}
 ),
 
 s(
-	{trig = "([^%a])Co", dscr = "Semicolon", snippetType = "autosnippet", regTrig = true, wordTrig = false},
+	{trig = "([^%a])Co", dscr = "Semicolon", regTrig = true, wordTrig = false},
 	{f( function(_, snip) return snip.captures[1] end ), t(";")},
     {condition = in_mathzone}
 ),
