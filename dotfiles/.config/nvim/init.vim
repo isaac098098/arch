@@ -171,9 +171,12 @@ require("luasnip").config.set_config({ -- Setting LuaSnip config
 
   -- Enable autotriggered snippets
   enable_autosnippets = true,
+  keep_roots = true, --Link children
+  exit_roots = true, --Link children
+  link_children = true, --Link children
 
   -- Use Tab (or some other key if you prefer) to trigger visual selection
-  --store_selection_keys = "<Tab>",
+  store_selection_keys = "<Tab>",
 })
 
 -- Undo snippet

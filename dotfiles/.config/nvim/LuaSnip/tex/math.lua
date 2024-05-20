@@ -195,14 +195,14 @@ s(
 -- Superscripts, subscripts and dots
 
 s(
-	{trig = "([^%a])oo", dscr = "Superscript", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ),t("^"), },
+	{trig = "oo", dscr = "Superscript", snippetType="autosnippet", wordTrig = false},
+	{t("^")},
 	{condition = in_mathzone}
 ),
  
 s(
-	{trig = "([^%a])uu", dscr = "Subscript", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ),t("_"), },
+	{trig = "uu", dscr = "Subscript", snippetType="autosnippet", wordTrig = false},
+	{t("_")},
 	{condition = in_mathzone}
 ),
 
@@ -411,7 +411,7 @@ s(
 s(
 	{trig = "([^%a])fn", dscr = "Function domain and codomain", snippetType="autosnippet", regTrig = true, wordTrig = false},
 	{
-		f( function(_, snip) return snip.captures[1] end ), i(1), t(": "), i(2), t(" \\longrightarrow ")
+		f( function(_, snip) return snip.captures[1] end ), i(1), t(" : "), i(2), t(" \\longrightarrow "), i(3)
 	},
 	{condition = in_mathzone}
 ),
