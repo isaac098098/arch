@@ -288,19 +288,13 @@ s(
 ),
 
 s(
-	{trig = "([^%a])Sc", dscr = "Small caps", snippetType = "autosnippet", regTrig = true, wordTrig = false},
+	{trig = "([^%a])sc", dscr = "Small caps", regTrig = true, wordTrig = false},
 	{f( function(_, snip) return snip.captures[1] end ), t("\\textsc{"), i(1), t("}")}
 ),
 
 s(
 	{trig = "([^%a])mc", dscr = "Caligraphic font", snippetType = "autosnippet", regTrig = true, wordTrig = false},
 	{f( function(_, snip) return snip.captures[1] end ), t("\\mathcal{"), i(1), t("}")}
-),
-
-s(
-	{trig = "([^%a])mc", dscr = "Caligraphic font", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\mathcal{"), i(1), t("}")},
-    {condition = in_mathzone}
 ),
 
 s(
