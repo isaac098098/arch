@@ -1,0 +1,18 @@
+#!/usr/bin/bash
+cp -r ~/.config/i3 ~/arch/dotfiles/.config/
+cp -r ~/.config/kitty ~/arch/dotfiles/.config/
+cp -r ~/.config/nvim ~/arch/dotfiles/.config/
+cp -r ~/.config/picom ~/arch/dotfiles/.config/
+cp -r ~/.config/polybar ~/arch/dotfiles/.config/
+cp -r ~/.config/rofi ~/arch/dotfiles/.config/
+cp -r ~/.config/zathura ~/arch/dotfiles/.config/
+cp -r ~/.config/hypr ~/arch/dotfiles/.config/
+cp -r ~/.config/waybar ~/arch/dotfiles/.config/
+cp -r ~/.config/wofi ~/arch/dotfiles/.config/
+cp -r ~/.config/kwalletrc ~/arch/dotfiles/.config/
+cp -r ~/.local/bin ~/arch/
+
+cp ~/.p10k.zsh ~/arch/dotfiles/
+cp ~/.xinitrc ~/arch/dotfiles/
+cp ~/.zprofile ~/arch/dotfiles/
+cp ~/.zshrc ~/arch/dotfiles/

@@ -20,205 +20,205 @@ s(
 
 s(
 	{trig = "([^%a])%.a", dscr = "Lowercase alpha", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\alpha ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\alpha")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.b", dscr = "Lowercase beta", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\beta ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\beta")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.g", dscr = "Lowercase gamma", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\gamma ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\gamma")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.G", dscr = "Uppercase gamma", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\Gamma ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\Gamma")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.d", dscr = "Lowercase delta", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\delta ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\delta")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.D", dscr = "Uppercase delta", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\Delta ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\Delta")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.e", dscr = "Lowercase epsilon", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\varepsilon ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\varepsilon")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.z", dscr = "Lowercase zeta", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\zeta ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\zeta")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.z", dscr = "Lowercase eta", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\eta ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\eta")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.th", dscr = "Lowercase theta", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\theta ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\theta")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.Th", dscr = "Uppercase theta", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\Theta ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\Theta")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.i", dscr = "Lowercase iota", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\iota ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\iota")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.k", dscr = "Lowercase kappa", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\kappa ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\kappa")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.l", dscr = "Lowercase lambda", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\lambda ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\lambda")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.L", dscr = "Uppercase lambda", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\Lambda ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\Lambda")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.m", dscr = "Lowercase mu", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\mu ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\mu")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.n", dscr = "Lowercase nu", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\nu ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\nu")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.x", dscr = "Lowercase xi", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\xi ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\xi")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.X", dscr = "Uppercase xi", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\Xi ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\Xi")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.pi", dscr = "Lowercase pi", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\pi ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\pi")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.Pi", dscr = "Uppercase pi", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\Pi ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\Pi")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.r", dscr = "Lowercase rho", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\rho ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\rho")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.s", dscr = "Lowercase sigma", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\sigma ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\sigma")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.S", dscr = "Uppercase sigma", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\Sigma ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\Sigma")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.ta", dscr = "Lowercase tau", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\tau ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\tau")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.u", dscr = "Lowercase upsilon", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\upsilon ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\upsilon")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.U", dscr = "Uppercase upsilon", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\Upsilon ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\Upsilon")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.ph", dscr = "Lowercase phi", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\varphi ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\varphi")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.Ph", dscr = "Uppercase phi", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\Phi ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\Phi")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.ch", dscr = "Uppercase chi", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\chi ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\chi")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.ps", dscr = "Lowercase psi", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\psi ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\psi")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.Ps", dscr = "Uppercase psi", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\Psi ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\Psi")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.o", dscr = "Lowercase omega", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\omega ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\omega")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.O", dscr = "Uppercase omega", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\Omega ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\Omega")},
     {condition = in_mathzone}
 ),
 
@@ -226,37 +226,37 @@ s(
 
 s(
 	{trig = "([^%a])%.N", dscr = "Blackboard N", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\N ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\N")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.Z", dscr = "Blackboard Z", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\Z ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\Z")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.Q", dscr = "Blackboard Q", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\Q ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\Q")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.R", dscr = "Blackboard R", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\R ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\R")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.C", dscr = "Blackboard C", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\C ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\C")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])%.F", dscr = "Blackboard F", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\F ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\F")},
     {condition = in_mathzone}
 ),
 
@@ -288,7 +288,7 @@ s(
 ),
 
 s(
-	{trig = "([^%a])Sc", dscr = "Small caps", regTrig = true, wordTrig = false},
+	{trig = "([^%a])Sc", dscr = "Small caps", snippetType = "autosnippet", regTrig = true, wordTrig = false},
 	{f( function(_, snip) return snip.captures[1] end ), t("\\textsc{"), i(1), t("}")}
 ),
 
@@ -325,13 +325,13 @@ s(
 -- Characters
 
 s(
-	{trig = "([^%a])co", dscr = "Colon", regTrig = true, wordTrig = false},
+	{trig = "([^%a])co", dscr = "Colon", snippetType = "autosnippet", regTrig = true, wordTrig = false},
 	{f( function(_, snip) return snip.captures[1] end ), t(":")},
     {condition = in_mathzone}
 ),
 
 s(
-	{trig = "([^%a])Co", dscr = "Semicolon", regTrig = true, wordTrig = false},
+	{trig = "([^%a])Co", dscr = "Semicolon", snippetType = "autosnippet", regTrig = true, wordTrig = false},
 	{f( function(_, snip) return snip.captures[1] end ), t(";")},
     {condition = in_mathzone}
 ),

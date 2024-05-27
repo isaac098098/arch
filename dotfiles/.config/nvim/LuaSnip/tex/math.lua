@@ -26,7 +26,7 @@ s(
 
 s(
     {trig = "([^%a])aq", dscr = "Square brackets", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-    {f( function(_, snip) return snip.captures[1] end ), t("\\left["), i(1), t("\\right}")},
+    {f( function(_, snip) return snip.captures[1] end ), t("\\left["), i(1), t("\\right]")},
     {condition = in_mathzone}
 ),
 
@@ -60,97 +60,97 @@ s(
  
 s(
 	{trig = "([^%a])lg", dscr = "Logarithm", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\log ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\log")},
 	{condition = in_mathzone}
 ),
  
 s(
 	{trig = "([^%a])sin", dscr = "Sine", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\sin ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\sin")},
 	{condition = in_mathzone}
 ),
  
 s(
 	{trig = "([^%a])cos", dscr = "Cosine", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\cos ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\cos")},
 	{condition = in_mathzone}
 ),
  
 s(
 	{trig = "([^%a])tan", dscr = "Tangent", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\tan ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\tan")},
 	{condition = in_mathzone}
 ),
  
 s(
 	{trig = "([^%a])cot", dscr = "Cotangent", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\cot ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\cot")},
 	{condition = in_mathzone}
 ),
  
 s(
 	{trig = "([^%a])sec", dscr = "Secant", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\sec ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\sec")},
 	{condition = in_mathzone}
 ),
  
 s(
 	{trig = "([^%a])csc", dscr = "Cosecant", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\csc ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\csc")},
 	{condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])Sin", dscr = "Arcsine", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\arcsin ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\arcsin")},
 	{condition = in_mathzone}
 ),
  
 s(
 	{trig = "([^%a])Cos", dscr = "Arccosine", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\arccos ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\arccos")},
 	{condition = in_mathzone}
 ),
  
 s(
 	{trig = "([^%a])Tan", dscr = "Arctangent", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\arctan ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\arctan")},
 	{condition = in_mathzone}
 ),
  
 s(
 	{trig = "([^%a])Cot", dscr = "Arccotangent", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\textnormal{arc\\hspace{2px}cot} ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\textnormal{arc\\hspace{2px}cot}")},
 	{condition = in_mathzone}
 ),
  
 s(
 	{trig = "([^%a])Sec", dscr = "Arcsecant", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\textnormal{arcsec} ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\textnormal{arcsec}")},
 	{condition = in_mathzone}
 ),
  
 s(
 	{trig = "([^%a])Csc", dscr = "Arccosecant", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\textnormal{arc\\hspace{2px}csc} ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\textnormal{arc\\hspace{2px}csc}")},
 	{condition = in_mathzone}
 ),
  
 s(
 	{trig = "([^%a])cr", dscr = "Overline", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\overline{"), i(1), t("} ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\overline{"), i(1), t("}")},
 	{condition = in_mathzone}
 ),
  
 s(
 	{trig = "([^%a])ver", dscr = "Double bars", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\lVert "), i(1), t(" \\rVert ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\lVert "), i(1), t(" \\rVert")},
 	{condition = in_mathzone}
 ),
  
 s(
 	{trig = "([^%a])inn", dscr = "Angled bars", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\langle "), i(1), t(" \\rangle ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\langle "), i(1), t(" \\rangle")},
 	{condition = in_mathzone}
 ),
 
@@ -170,32 +170,32 @@ s(
  
 s(
 	{trig = "([^%a])tm", dscr = "Cross product", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ),t("\\times ")},
+	{f( function(_, snip) return snip.captures[1] end ),t("\\times")},
 	{condition = in_mathzone}
 ),
  
 s(
 	{trig = "([^%a])gr", dscr = "Gradient operator", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ),t("\\nabla ")},
+	{f( function(_, snip) return snip.captures[1] end ),t("\\nabla")},
 	{condition = in_mathzone}
 ),
  
 s(
 	{trig = "([^%a])div", dscr = "Divergence operator", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ),t("\\nabla\\cdot\\vv{"), i(1), t("} ")},
+	{f( function(_, snip) return snip.captures[1] end ),t("\\nabla\\cdot\\vv{"), i(1), t("}")},
 	{condition = in_mathzone}
 ),
  
 s(
 	{trig = "([^%a])cur", dscr = "Curl operator", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ),t("\\nabla\\times\\vv{"), i(1), t("} ")},
+	{f( function(_, snip) return snip.captures[1] end ),t("\\nabla\\times\\vv{"), i(1), t("}")},
 	{condition = in_mathzone}
 ),
 
 -- Superscripts, subscripts and dots
 
 s(
-	{trig = "\\", dscr = "Superscript", snippetType="autosnippet", wordTrig = false},
+	{trig = "¨", dscr = "Superscript", snippetType="autosnippet", wordTrig = false},
 	{t("^")},
 	{condition = in_mathzone}
 ),
@@ -222,20 +222,20 @@ s(
 	{trig = "st", dscr = "Double subscript", snippetType="autosnippet", regTrig = true, wordTrig = false},
 	{
         f( function(_, snip) return snip.captures[1] end ), t("\\substack{"), 
-        i(1), t(" \\\\ "), i(2), t("} ")
+        i(1), t(" \\\\ "), i(2), t("}")
     },
 	{condition = in_mathzone}
 ),
 
 s(
 	{trig = "Dt", dscr = "Middle dot", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\cdot ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\cdot")},
 	{condition = in_mathzone}
 ),
 
 s(
 	{trig = "cdt", dscr = "Middle dots", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\cdots ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\cdots")},
 	{condition = in_mathzone}
 ),
 
@@ -247,13 +247,13 @@ s(
 
 s(
 	{trig = "vdt", dscr = "Vertical dots", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\vdots ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\vdots")},
 	{condition = in_mathzone}
 ),
 
 s(
 	{trig = "vdt", dscr = "Diagonal dots", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\ddots ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\ddots")},
 	{condition = in_mathzone}
 ),
 
@@ -292,8 +292,8 @@ s(
 -- Differentials and derivatives
 
 s(
-	{trig = "([^%a])dx", dscr = "Differential", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ),t("\\dif "), i(1)},
+	{trig = "([^%a])dx", dscr = "Inline ifferential", snippetType="autosnippet", regTrig = true, wordTrig = false},
+	{f( function(_, snip) return snip.captures[1] end ),t("\\Dif"), i(1)},
 	{condition = in_mathzone}
 ),
 
@@ -614,7 +614,7 @@ s(
 	{trig = "([^%a])sup", dscr = "Supremum", snippetType="autosnippet", regTrig = true, wordTrig = false},
 	{
         f( function(_, snip) return snip.captures[1] end ),
-        t("\\sup ")
+        t("\\sup")
 	},
     {condition = in_mathzone}
 ),
@@ -632,7 +632,7 @@ s(
 	{trig = "([^%a])inf", dscr = "Infimum", snippetType="autosnippet", regTrig = true, wordTrig = false},
 	{
         f( function(_, snip) return snip.captures[1] end ),
-        t("\\inf ")
+        t("\\inf")
 	},
     {condition = in_mathzone}
 ),
@@ -650,7 +650,7 @@ s(
 	{trig = "([^%a])mx", dscr = "Maximum", snippetType="autosnippet", regTrig = true, wordTrig = false},
 	{
         f( function(_, snip) return snip.captures[1] end ),
-        t("\\max ")
+        t("\\max")
 	},
     {condition = in_mathzone}
 ),
@@ -659,7 +659,7 @@ s(
 	{trig = "([^%a])mn", dscr = "Minimum", snippetType="autosnippet", regTrig = true, wordTrig = false},
 	{
         f( function(_, snip) return snip.captures[1] end ),
-        t("\\min ")
+        t("\\min")
 	},
     {condition = in_mathzone}
 ),
@@ -679,7 +679,7 @@ s(
 	{trig = "([^%a])sfm", dscr = "Subscript and superscript family", snippetType="autosnippet", regTrig = true, wordTrig = false},
 	{
         f( function(_, snip) return snip.captures[1] end ),
-        t("\\left\\{"), i(1), t("\\right\\}_{"), i(2), t("}^{"), i(3), t("} "), 
+        t("\\left\\{"), i(1), t("\\right\\}_{"), i(2), t("}^{"), i(3), t("}"), 
 	},
     {condition = in_mathzone}
 ),
@@ -703,19 +703,19 @@ s(
 
 s(
 	{trig = "([^%a])am", dscr = "Align", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("&= ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("& = ")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])Am", dscr = "Align", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t({" \\\\","&= "}), },
+	{f( function(_, snip) return snip.captures[1] end ), t({" \\\\","& = "}), },
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])Au", dscr = "Nested align", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("&&= ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("&& = ")},
     {condition = in_mathzone}
 ),
 
@@ -751,7 +751,7 @@ s(
 
 s(
 	{trig = "([^%a])na", dscr = "In naturals", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\in\\N ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\in\\N")},
     {condition = in_mathzone}
 ),
 
@@ -806,19 +806,19 @@ s(
 
 s(
 	{trig = "([^%a])ltr", dscr = "Left pointing triangle", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\lhd ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\lhd")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])nb", dscr = "Inverted triangle", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\nabla ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\nabla")},
     {condition = in_mathzone}
 ),
 
 s(
 	{trig = "([^%a])vac", dscr = "Empty set", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\vc ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\vc")},
     {condition = in_mathzone}
 ),
 
@@ -924,13 +924,13 @@ s(
  
 s(
 	{trig = "([^%a])vec", dscr = "Arrow vector", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\vv{"), i(1), t("} ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\vv{"), i(1), t("}")},
     {condition = in_mathzone}
 ),
  
 s(
 	{trig = "([^%a])hat", dscr = "Unitary vector", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\hat{"), i(1), t("} ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\hat{"), i(1), t("}")},
     {condition = in_mathzone}
 ),
 

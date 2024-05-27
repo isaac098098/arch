@@ -323,6 +323,7 @@ s(
         \newcommand{\F}{\mathbb{F}}
         \newcommand{\vc}{\textnormal{\O}}
         \newcommand{\dif}{\textnormal{d}}
+        \newcommand{\Dif}{\textnormal{ d}}
         \newcommand{\der}[2]{\frac{\dif#1}{\dif#2}}
         \newcommand{\nder}[3]{\frac{\dif^{#1}#2}{\dif#3^{#1}}}
         \newcommand{\prt}[2]{\frac{\partial#1}{\partial#2}}
@@ -647,6 +648,7 @@ s(
         \newcommand{\F}{\mathbb{F}}
         \newcommand{\vc}{\textnormal{\O}}
         \newcommand{\dif}{\textnormal{d}}
+        \newcommand{\Dif}{\textnormal{ d}}
         \newcommand{\der}[2]{\frac{\dif#1}{\dif#2}}
         \newcommand{\nder}[3]{\frac{\dif^{#1}#2}{\dif#3^{#1}}}
         \newcommand{\prt}[2]{\frac{\partial#1}{\partial#2}}

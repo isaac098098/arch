@@ -163,7 +163,7 @@ s(
 
 s(
 	{trig = "([^%a])dis", dscr = "Displaystyle", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t("\\displaystyle ")},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\displaystyle")},
     {condition = in_mathzone}
 ),
 
