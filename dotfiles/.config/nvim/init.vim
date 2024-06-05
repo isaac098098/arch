@@ -27,7 +27,8 @@ if has('termguicolors')
 	set termguicolors
 endif
 
-colorscheme catppuccin" catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+colorscheme catppuccin-mocha
+"catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 
 lua << END
 
@@ -218,8 +219,8 @@ imap <silent><expr> jk luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-j
 smap <silent><expr> jk luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<Tab>'
 
 " Use Shift-Tab to jump backwards through snippets
-imap <silent><expr> fd luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
-smap <silent><expr> fd luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
+imap <silent><expr> wq luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
+smap <silent><expr> wq luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
 
 " Cycle forward through choice nodes with Control-f (for example)
 imap <silent><expr> <C-f> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-f>'
@@ -254,24 +255,30 @@ set expandtab
 
 " vimtex para hyprland
 
-function! Synctex()
-	let vimura_param = " --synctex-forward " . line('.') . ":" . col('.') . ":" . expand('%:p') . " " . substitute(expand('%:p'),"tex$","pdf","")
-	if has('nvim')
-		call jobstart("vimura neovim" . vimura_param)
-	else
-		exec "silent !vimura vim" . vimura_param . "&"
-	endif
-	redraw!
-endfunction 
+"function! Synctex()
+	"let vimura_param = " --synctex-forward " . line('.') . ":" . col('.') . ":" . expand('%:p') . " " . substitute(expand('%:p'),"tex$","pdf","")
+	"if has('nvim')
+		"call jobstart("vimura neovim" . vimura_param)
+	"else
+		"exec "silent !vimura vim" . vimura_param . "&"
+	"endif
+	"redraw!
+"endfunction 
 
-map <silent> <C-enter> :call Synctex()<cr>
+"map <silent> <C-enter> :call Synctex()<cr>
+
+"augroup vimtex
+	"au!
+	"au User VimtexEventCompileSuccess call Synctex()
+"augroup END
 
 augroup vimtex
 	au!
-	au User VimtexEventCompileSuccess call Synctex()
+	au User VimtexEventCompileSuccess VimtexView
 augroup END
 
 let g:vimtex_compiler_method = 'latexmk'
+let g:vimtex_view_method = 'zathura'
 let g:vimtex_view_forward_search_on_start = 'false'
 let g:vimtex_quickfix_mode = 0
 let g:vimtex_view_automatic = 0
@@ -292,7 +299,7 @@ let g:vimtex_compiler_latexmk_engines = {
 nmap <C-d> ggVG"+y
 
 " Copiar al clipboard (Wayland), instalar wl-clipboard
-nnoremap "+y :call system("wl-copy", @") <CR>
+"nnoremap "+y :call system("wl-copy", @") <CR>
 
 " Estilo del cursor
 set guicursor=i:hor10
