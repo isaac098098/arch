@@ -1,5 +1,5 @@
 configuration {
-    font: "Iosevka NF Bold 12";
+    font: "Iosevka NF Bold 14";
     line-margin: 10;
     display-ssh:    " ";
     display-run:    " ";
