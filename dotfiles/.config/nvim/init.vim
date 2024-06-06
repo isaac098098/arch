@@ -6,6 +6,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
+Plug 'nvim-tree/nvim-tree.lua'
+
 Plug 'nvim-tree/nvim-web-devicons'
 
 "Plug 'nordtheme/vim'
@@ -29,6 +31,45 @@ endif
 
 colorscheme catppuccin-mocha
 "catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+
+" nvim-tree
+
+nnoremap <leader>tt <cmd>NvimTreeToggle<cr>
+nnoremap <leader>tf <cmd>NvimTreeFindFile<cr>
+
+lua << END
+
+-- nvim-tree
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+local function my_on_attach(bufnr)
+	local api = require "nvim-tree.api"
+
+	local function opts(desc)
+		return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+	end
+
+	api.config.mappings.default_on_attach(bufnr)
+end
+
+require("nvim-tree").setup({
+  sort_by = "case_sensitive",
+  on_attach = my_on_attach,
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = false,
+  },
+})
+
+vim.opt.termguicolors = true 
+
+vim.g.nvim_tree_respect_buf_cwd = 1
+
+END
 
 lua << END
 
