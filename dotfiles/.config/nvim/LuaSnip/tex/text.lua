@@ -283,18 +283,24 @@ s(
 ),
 
 s(
-	{trig = "([^%a])ti", dscr = "Italic text", snippetType = "autosnippet", regTrig = true, wordTrig = false},
+	{trig = "([^%a])em", dscr = "Italic text", regTrig = true, wordTrig = false},
 	{f( function(_, snip) return snip.captures[1] end ), t("\\textit{"), i(1), t("}")}
 ),
 
 s(
-	{trig = "([^%a])sc", dscr = "Small caps", regTrig = true, wordTrig = false},
+	{trig = "([^%a])Sc", dscr = "Small caps", snippetType = "autosnippet", regTrig = true, wordTrig = false},
 	{f( function(_, snip) return snip.captures[1] end ), t("\\textsc{"), i(1), t("}")}
 ),
 
 s(
 	{trig = "([^%a])mc", dscr = "Caligraphic font", snippetType = "autosnippet", regTrig = true, wordTrig = false},
 	{f( function(_, snip) return snip.captures[1] end ), t("\\mathcal{"), i(1), t("}")}
+),
+
+s(
+	{trig = "([^%a])mc", dscr = "Caligraphic font", snippetType = "autosnippet", regTrig = true, wordTrig = false},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\mathcal{"), i(1), t("}")},
+    {condition = in_mathzone}
 ),
 
 s(
@@ -319,14 +325,14 @@ s(
 -- Characters
 
 s(
-	{trig = "([^%a])co", dscr = "Colon", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t(":")},
+	{trig = "Co", dscr = "Colon", snippetType = "autosnippet", wordTrig = false},
+	{t(";")},
     {condition = in_mathzone}
 ),
 
 s(
-	{trig = "([^%a])Co", dscr = "Semicolon", snippetType = "autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ), t(";")},
+	{trig = "co", dscr = "Colon", snippetType = "autosnippet", wordTrig = false},
+	{t(":")},
     {condition = in_mathzone}
 ),
 }

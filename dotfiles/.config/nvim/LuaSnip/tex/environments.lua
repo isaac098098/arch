@@ -1,3 +1,7 @@
+local in_mathzone = function()
+  return vim.fn['vimtex#syntax#in_mathzone']() == 1
+end
+
 return {
 
 -- Inline
@@ -5,6 +9,13 @@ return {
 s(
 	{trig = "([^%a])mm", dscr = "Inline math mode", snippetType="autosnippet", regTrig = true, wordTrig = false},
 	{t(" $"), i(1), t("$")}
+),
+
+s(
+	{trig = "([^%a])dis", dscr = "Displaystyle", snippetType="autosnippet", regTrig = true, wordTrig = false},
+    {f( function(_, snip) return snip.captures[1] end ), t("\\displaystyle ")},
+    {condition = in_mathzone}
+
 ),
 
 -- Lists
@@ -121,7 +132,7 @@ s(
 s(
 	{trig = "([^%a])th", dscr = "Theorem", regTrig = true, wordTrig = false},
 	{
-		t({"","\\begin{theorem}",""}), 
+		t({"","","\\begin{theorem}",""}), 
 		i(1), 
 		t({"","\\end{theorem}"}),
 		i(2)
@@ -131,7 +142,7 @@ s(
 s(
 	{trig = "([^%a])Th", dscr = "Theorem with note", regTrig = true, wordTrig = false},
 	{
-		t({"","\\begin{theorem}["}),
+		t({"","","\\begin{theorem}["}),
 		i(1),
 		t({"]",""}), 
 		i(2), 
@@ -143,7 +154,7 @@ s(
 s(
 	{trig = "([^%a])pn", dscr = "Proposition", snippetType="autosnippet", regTrig = true, wordTrig = false},
 	{
-		t({"","\\begin{proposition}",""}), 
+		t({"","","\\begin{proposition}",""}), 
 		i(1), 
 		t({"","\\end{proposition}"}),
 		i(2)
@@ -153,7 +164,7 @@ s(
 s(
 	{trig = "([^%a])Pn", dscr = "Proposition with note", snippetType="autosnippet", regTrig = true, wordTrig = false},
 	{
-		t({"","\\begin{proposition}["}),
+		t({"","","\\begin{proposition}["}),
 		i(1),
 		t({"]",""}), 
 		i(2), 
@@ -165,7 +176,7 @@ s(
 s(
 	{trig = "([^%a])cc", dscr = "Corollary", snippetType="autosnippet", regTrig = true, wordTrig = false},
 	{
-		t({"","\\begin{corollary}",""}), 
+		t({"","","\\begin{corollary}",""}), 
 		i(1), 
 		t({"","\\end{corollary}"}),
 		i(2)
@@ -175,7 +186,7 @@ s(
 s(
 	{trig = "([^%a])Cc", dscr = "Corollary with note", snippetType="autosnippet", regTrig = true, wordTrig = false},
 	{
-		t({"","\\begin{corollary}["}),
+		t({"","","\\begin{corollary}["}),
 		i(1),
 		t({"]",""}), 
 		i(2), 
@@ -187,7 +198,7 @@ s(
 s(
 	{trig = "([^%a])lm", dscr = "Lemma", snippetType="autosnippet", regTrig = true, wordTrig = false},
 	{
-		t({"","\\begin{lemma}",""}), 
+		t({"","","\\begin{lemma}",""}), 
 		i(1), 
 		t({"","\\end{lemma}"}),
 		i(2)
@@ -197,7 +208,7 @@ s(
 s(
 	{trig = "([^%a])Lm", dscr = "Lema with note", snippetType="autosnippet", regTrig = true, wordTrig = false},
 	{
-		t({"","\\begin{lemma}["}),
+		t({"","","\\begin{lemma}["}),
 		i(1),
 		t({"]",""}), 
 		i(2), 
@@ -209,7 +220,7 @@ s(
 s(
 	{trig = "([^%a])def", dscr = "Definition", regTrig = true, wordTrig = false},
 	{
-		t({"","\\begin{definition}",""}), 
+		t({"","","\\begin{definition}",""}), 
 		i(1), 
 		t({"","\\end{definition}"}),
 		i(2)
@@ -219,7 +230,7 @@ s(
 s(
 	{trig = "([^%a])Def", dscr = "Definition with note", regTrig = true, wordTrig = false},
 	{
-		t({"","\\begin{definition}["}),
+		t({"","","\\begin{definition}["}),
 		i(1),
 		t({"]",""}), 
 		i(2), 
@@ -231,7 +242,7 @@ s(
 s(
 	{trig = "([^%a])rm", dscr = "Remark", snippetType="autosnippet", regTrig = true, wordTrig = false},
 	{
-		t({"","\\begin{remark}",""}), 
+		t({"","","\\begin{remark}",""}), 
 		i(1), 
 		t({"","\\end{remark}"}),
 		i(2)
@@ -241,7 +252,7 @@ s(
 s(
 	{trig = "([^%a])pr", dscr = "Proof", regTrig = true, wordTrig = false},
 	{
-		t({"","\\begin{proof}",""}), 
+		t({"","","\\begin{proof}",""}), 
 		i(1), 
 		t({"","\\end{proof}"}),
 		i(2)
@@ -251,7 +262,7 @@ s(
 s(
 	{trig = "([^%a])ee", dscr = "Exercise", snippetType="autosnippet", regTrig = true, wordTrig = false},
 	{
-		t({"","\\begin{exercise}",""}), 
+		t({"","","\\begin{exercise}",""}), 
 		i(1), 
 		t({"","\\end{exercise}"}),
 		i(2)
@@ -261,7 +272,7 @@ s(
 s(
 	{trig = "([^%a])Ee", dscr = "Exercise with note", snippetType="autosnippet", regTrig = true, wordTrig = false},
 	{
-		t({"","\\begin{exercise}["}),
+		t({"","","\\begin{exercise}["}),
 		i(1),
 		t({"]",""}), 
 		i(2), 
@@ -273,7 +284,7 @@ s(
 s(
 	{trig = "([^%a])ej", dscr = "Example", regTrig = true, wordTrig = false},
 	{
-		t({"","\\begin{example}",""}), 
+		t({"","","\\begin{example}",""}), 
 		i(1), 
 		t({"","\\end{example}"}),
 		i(2)

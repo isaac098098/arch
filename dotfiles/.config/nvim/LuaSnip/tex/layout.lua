@@ -13,6 +13,12 @@ s(
 ),
 
 s(
+	{trig = "([^%a])Pp", dscr = "Hardcoded parskip", snippetType="autosnippet", regTrig = true, wordTrig = false},
+	{t({"","\\par $ $",""}),i(1), 
+	}
+),
+
+s(
 	{trig = "([^%a])pm", dscr = "Medium skip", snippetType="autosnippet", regTrig = true, wordTrig = false},
 	{t({"","\\medskip","",""}), i(1)}
 ),
@@ -180,7 +186,7 @@ s(
 ),
 
 s(
-	{trig = "([^%a])scm", dscr = "Unnumbered section", regTrig = true, wordTrig = false},
+	{trig = "([^%a])scm", dscr = "Unnumbered section", snippetType="autosnippet", regTrig = true, wordTrig = false},
 	{
 		t({"","","\\section*{"}), i(1), t({"}","",""}),
 		i(2)
@@ -188,7 +194,7 @@ s(
 ),
 
 s(
-	{trig = "([^%a])Scm", dscr = "Unnumbered section in TOC", regTrig = true, wordTrig = false},
+	{trig = "([^%a])Scm", dscr = "Unnumbered section in TOC", snippetType="autosnippet", regTrig = true, wordTrig = false},
 	{
 		t({"","","\\phantomsection",""}),
 		t("\\section*{"), i(1), t({"}",""}),

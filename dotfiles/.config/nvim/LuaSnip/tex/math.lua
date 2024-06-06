@@ -51,6 +51,12 @@ s(
 	{f( function(_, snip) return snip.captures[1] end ),t("\\sqrt{"), i(1), t("}")},
 	{condition = in_mathzone}
 ),
+
+s(
+	{trig = "([^%a])Pm", dscr = "Plus minus", snippetType="autosnippet", regTrig = true, wordTrig = false},
+    {f( function(_, snip) return snip.captures[1] end ),t("\\pm ")},
+	{condition = in_mathzone}
+),
  
 s(
 	{trig = "([^%a])Sq", dscr = "n-th square root", snippetType="autosnippet", regTrig = true, wordTrig = false},
@@ -145,6 +151,12 @@ s(
 s(
 	{trig = "([^%a])ver", dscr = "Double bars", snippetType="autosnippet", regTrig = true, wordTrig = false},
 	{f( function(_, snip) return snip.captures[1] end ), t("\\lVert "), i(1), t(" \\rVert")},
+	{condition = in_mathzone}
+),
+ 
+s(
+	{trig = "([^%a])Ver", dscr = "Bigger double bars", snippetType="autosnippet", regTrig = true, wordTrig = false},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\left\\lVert "), i(1), t(" \\right\\rVert")},
 	{condition = in_mathzone}
 ),
  
@@ -293,7 +305,7 @@ s(
 
 s(
 	{trig = "([^%a])dx", dscr = "Inline ifferential", snippetType="autosnippet", regTrig = true, wordTrig = false},
-	{f( function(_, snip) return snip.captures[1] end ),t("\\Dif"), i(1)},
+	{f( function(_, snip) return snip.captures[1] end ),t("\\Dif "), i(1)},
 	{condition = in_mathzone}
 ),
 
@@ -788,7 +800,7 @@ s(
 ),
 
 s(
-	{trig = "([^%a])to", dscr = "Arrow limit", snippetType="autosnippet", regTrig = true, wordTrig = false},
+	{trig = "([^%a])arr", dscr = "Arrow limit with text", snippetType="autosnippet", regTrig = true, wordTrig = false},
 	{
         f( function(_, snip) return snip.captures[1] end ),
         t("\\xrightarrow["), i(1), t("]{"), i(2), t("} ")
@@ -796,7 +808,22 @@ s(
     {condition = in_mathzone}
 ),
 
+s(
+	{trig = "([^%a])to", dscr = "Arrow limit", snippetType="autosnippet", regTrig = true, wordTrig = false},
+	{
+        f( function(_, snip) return snip.captures[1] end ),
+        t("\\rightarrow ")
+	},
+    {condition = in_mathzone}
+),
+
 -- Symbols
+ 
+s(
+	{trig = "([^%a])cir", dscr = "Circle", snippetType="autosnippet", regTrig = true, wordTrig = false},
+	{f( function(_, snip) return snip.captures[1] end ), t("\\circ")},
+	{condition = in_mathzone}
+),
 
 s(
 	{trig = "([^%a])Pm", dscr = "Plus minus symbol", snippetType="autosnippet", regTrig = true, wordTrig = false},
@@ -929,13 +956,13 @@ s(
 -- Vectors
  
 s(
-	{trig = "([^%a])vec", dscr = "Arrow vector", regTrig = true, wordTrig = false},
+	{trig = "([^%a])vec", dscr = "Arrow vector", snippetType = "autosnippet", regTrig = true, wordTrig = false},
 	{f( function(_, snip) return snip.captures[1] end ), t("\\vv{"), i(1), t("}")},
     {condition = in_mathzone}
 ),
  
 s(
-	{trig = "([^%a])hat", dscr = "Unitary vector", regTrig = true, wordTrig = false},
+	{trig = "([^%a])hat", dscr = "Unitary vector", snippetType = "autosnippet", regTrig = true, wordTrig = false},
 	{f( function(_, snip) return snip.captures[1] end ), t("\\hat{"), i(1), t("}")},
     {condition = in_mathzone}
 ),

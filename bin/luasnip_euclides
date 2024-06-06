@@ -1,0 +1,11 @@
+#!/bin/bash
+curl -o $HOME/.config/nvim/LuaSnip/tex/environments.lua https://raw.githubusercontent.com/isaac098098/euclides/main/dotfiles/.config/nvim/LuaSnip/tex/environments.lua
+curl -o $HOME/.config/nvim/LuaSnip/tex/layout.lua https://raw.githubusercontent.com/isaac098098/euclides/main/dotfiles/.config/nvim/LuaSnip/tex/layout.lua
+curl -o $HOME/.config/nvim/LuaSnip/tex/math.lua https://raw.githubusercontent.com/isaac098098/euclides/main/dotfiles/.config/nvim/LuaSnip/tex/math.lua
+curl -o $HOME/.config/nvim/LuaSnip/tex/templates.lua https://raw.githubusercontent.com/isaac098098/euclides/main/dotfiles/.config/nvim/LuaSnip/tex/templates.lua
+curl -o $HOME/.config/nvim/LuaSnip/tex/text.lua https://raw.githubusercontent.com/isaac098098/euclides/main/dotfiles/.config/nvim/LuaSnip/tex/text.lua
+
+curl -o $HOME/.config/nvim/LuaSnip/all.lua https://raw.githubusercontent.com/isaac098098/euclides/main/dotfiles/.config/nvim/LuaSnip/all.lua
+curl -o $HOME/.config/nvim/LuaSnip/bib.lua https://raw.githubusercontent.com/isaac098098/euclides/main/dotfiles/.config/nvim/LuaSnip/bib.lua
+curl -o $HOME/.config/nvim/LuaSnip/lua.lua https://raw.githubusercontent.com/isaac098098/euclides/main/dotfiles/.config/nvim/LuaSnip/lua.lua
+curl -o $HOME/.config/nvim/LuaSnip/yuck.lua https://raw.githubusercontent.com/isaac098098/euclides/main/dotfiles/.config/nvim/LuaSnip/yuck.lua
