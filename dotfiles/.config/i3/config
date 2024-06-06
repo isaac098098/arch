@@ -250,6 +250,9 @@ bindsym $mod+w exec --no-startup-id setxkbmap us -variant intl
 bindsym $mod+c [title="Layers"] move scratchpad
 bindsym $mod+z [title="Layers"] scratchpad show
 
+bindsym $mod+u exec --no-startup-id unclutter -idle 3.0 -root
+bindsym $mod+t exec --no-startup-id killall unclutter
+
 focus_on_window_activation none
 
 smart_borders on
