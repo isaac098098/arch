@@ -239,7 +239,7 @@ client.background        $base
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 5%+
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
-default_border pixel 0
+default_border pixel 3
 default_floating_border pixel 0
 
 exec_always --no-startup-id feh --bg-scale $HOME/Documents/images/wallpapers/wavy_lines_v01_5120x2880.png
