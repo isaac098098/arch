@@ -31,17 +31,17 @@ $crust: #11111b;
 // Es la ventana que contiene toda la barra
 
 .catppuccin {
-  margin: 18px 15px 18px 15px;
-  padding: 5px 5px 10px 5px;
+  margin: 20px 10px 20px 15px;
+  padding: 5px 5px 5px 5px;
   border-radius: 10px;
 }
 
 // Caja con los módulos bottom, center y right
 
 .catppuccin_dock {
-  background-color: $crust;
+  background-color: $mantle;
   color: $subtext1;
-  box-shadow: 3px 2px 6px rgba($color: #000000, $alpha: 0.8);
+  box-shadow: 3px 2px 5px rgba($color: #000000, $alpha: 0.8);
 }
 
 // Widgets
@@ -52,27 +52,27 @@ $crust: #11111b;
 }
 
 .active_workspace {
-  background-color: $crust;
+  background-color: $mantle;
   padding: 5px 8px 5px 0px;
   font-weight: bold;
 }
 
 .active_workspace_1 {
   border-radius: 7px 7px 0px 0px;
-  background-color: $crust;
+  background-color: $mantle;
   padding: 5px 8px 5px 0px;
   font-weight: bold;
 }
 
 .active_workspace_10 {
   border-radius: 0px 0px 7px 7px;
-  background-color: $crust;
+  background-color: $mantle;
   padding: 5px 8px 5px 0px;
   font-weight: bold;
 }
 
 .focused_workspace {
-  background-color: $crust;
+  background-color: $mantle;
   color: $blue;
   padding: 5px 8px 5px 0px;
   font-weight: bold;
@@ -80,7 +80,7 @@ $crust: #11111b;
 
 .focused_workspace_1 {
   border-radius: 7px 7px 0px 0px;
-  background-color: $crust;
+  background-color: $mantle;
   color: $blue;
   padding: 5px 8px 5px 0px;
   font-weight: bold;
@@ -95,7 +95,7 @@ $crust: #11111b;
 }
 
 .empty_workspace {
-  background-color: $crust;
+  background-color: $mantle;
   color: $subtext0;
   padding: 5px 10px 5px 10px;
   font-weight: bold;
@@ -103,7 +103,7 @@ $crust: #11111b;
 
 .empty_workspace_1 {
   border-radius: 10px 10px 0px 0px;
-  background-color: $crust;
+  background-color: $mantle;
   color: $subtext0;
   padding: 5px 10px 5px 10px;
   font-weight: bold;
@@ -111,14 +111,14 @@ $crust: #11111b;
 
 .empty_workspace_10 {
   border-radius: 0px 0px 10px 10px;
-  background-color: $crust;
+  background-color: $mantle;
   color: $subtext0;
   padding: 5px 10px 5px 10px;
   font-weight: bold;
 }
 
 .volume_icon {
-  background-color: $crust;
+  background-color: $mantle;
   font-family: Iosevka NF;
   font-size: 15pt;
   padding: 0px 10px 5px 6px;
@@ -143,7 +143,7 @@ $crust: #11111b;
 }
 
 .battery_icon {
-  background-color: $crust;
+  background-color: $mantle;
   font-family: Iosevka NF;
   font-size: 17pt;
   padding: 0px 0px 0px 1px;
@@ -176,7 +176,7 @@ $crust: #11111b;
 }
 
 .brightness_icon {
-  background-color: $crust;
+  background-color: $mantle;
   font-family: Iosevka NF;
   font-size: 15pt;
   padding: 5px 7px 5px 0px;
@@ -201,12 +201,13 @@ $crust: #11111b;
 }
 
 .time {
-  background-color: $mantle;
+  background-color: $base;
   color: $subtext1;
   font-family: Iosevka NF;
   font-size: 14pt;
   font-weight: bold;
   padding: 5px 5px 5px 5px;
+  border-radius: 6px;
 }
 
 .poweroff_button {

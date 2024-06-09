@@ -242,7 +242,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 default_border pixel 0
 default_floating_border pixel 0
 
-exec_always --no-startup-id feh --bg-scale $HOME/Documents/images/wallpapers/arch-rainbow-1920x1080.png
+exec_always --no-startup-id feh --bg-scale $HOME/Documents/images/wallpapers/wavy_lines_v01_5120x2880.png
 exec --no-startup-id eww open catppuccin
 exec --no-startup-id xset s off
 exec --no-startup-id xset -dpms 
@@ -255,6 +255,8 @@ bindsym $mod+z [title="Layers"] scratchpad show
 
 bindsym $mod+u exec --no-startup-id unclutter -idle 3.0 -root
 bindsym $mod+t exec --no-startup-id killall unclutter
+bindsym $mod+o exec --no-startup-id eww open --toggle catppuccin
+bindsym $mod+p exec --no-startup-id eww open --toggle catppuccin
 
 focus_on_window_activation none
 

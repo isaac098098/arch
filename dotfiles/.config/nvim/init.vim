@@ -32,6 +32,8 @@ endif
 colorscheme catppuccin-mocha
 "catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 
+:hi normal guibg=#181825
+
 " nvim-tree
 
 nnoremap <leader>tt <cmd>NvimTreeToggle<cr>
