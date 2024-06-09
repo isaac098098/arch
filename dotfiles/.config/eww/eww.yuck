@@ -1,0 +1,208 @@
+(defwindow catppuccin 
+    :monitor 0
+    :stacking "bg"
+	:geometry (
+		geometry 
+		:anchor "left center"
+		:x "0"
+		:y "0"
+        :width "0px"
+        :height "100%"
+	)
+    (catppuccin_dock)
+)
+
+(defwidget catppuccin_dock []
+    (box :class "catppuccin_dock"
+        :orientation "vertical"
+        :valign "fill"
+        (top_catppuccin)
+        (bottom_catppuccin)
+    )
+)
+
+(defwidget top_catppuccin []
+    (box :class "top_catppuccin"
+        :orientation "vertical"
+        :valign "start"
+        :space-evenly false
+        (workspaces)
+    )
+)
+
+(defwidget bottom_catppuccin []
+    (box :class "bottom_catppuccin"
+        :orientation "vertical"
+        :valign "end"
+        :space-evenly false
+        (brightness)
+        (volume)
+        (time)
+        (powermenu)
+    )
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;; WIDGETS ;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;
+
+(deflisten active_workspaces "xprop -spy -root _NET_DESKTOP_NAMES")
+(deflisten focused_workspace "bash $HOME/.config/eww/scripts/get_active_workspace")
+
+(defwidget workspaces []
+	(box
+		:class "workspaces_box"
+		:orientation "vertical"
+		:halign "center"
+		:spacing "0"
+        :space-evenly false
+		(button
+			:class {focused_workspace == "1" ? "focused_workspace_1" : active_workspaces =~ '"1"' ? "active_workspace_1" : "empty_workspace_1"}
+			:onclick "i3-msg workspace 1" 
+			1
+		)(button
+			:class {focused_workspace == "2" ? "focused_workspace" : active_workspaces =~ '"2"' ? "active_workspace" : "empty_workspace"}
+			:onclick "i3-msg workspace 2" 
+			2
+		)(button
+			:class {focused_workspace == "3" ? "focused_workspace" : active_workspaces =~ '"3"' ? "active_workspace" : "empty_workspace"}
+			:onclick "i3-msg workspace 3" 
+			3
+		)(button
+			:class {focused_workspace == "4" ? "focused_workspace" : active_workspaces =~ '"4"' ? "active_workspace" : "empty_workspace"}
+			:onclick "i3-msg workspace 4" 
+			4
+		)(button
+			:class {focused_workspace == "5" ? "focused_workspace" : active_workspaces =~ '"5"' ? "active_workspace" : "empty_workspace"}
+			:onclick "i3-msg workspace 5" 
+			5
+		)(button
+			:class {focused_workspace == "6" ? "focused_workspace" : active_workspaces =~ '"6"' ? "active_workspace" : "empty_workspace"}
+			:onclick "i3-msg workspace 6" 
+			6
+		)(button
+			:class {focused_workspace == "7" ? "focused_workspace" : active_workspaces =~ '"7"' ? "active_workspace" : "empty_workspace"}
+			:onclick "i3-msg workspace 7" 
+			7
+		)(button
+			:class {focused_workspace == "8" ? "focused_workspace" : active_workspaces =~ '"8"' ? "active_workspace" : "empty_workspace"}
+			:onclick "i3-msg workspace 8" 
+			8
+		)(button
+			:class {focused_workspace == "9" ? "focused_workspace" : active_workspaces =~ '"9"' ? "active_workspace" : "empty_workspace"}
+			:onclick "i3-msg workspace 9" 
+			9
+		)(button
+			:class {focused_workspace == "10" ? "focused_workspace_10" : active_workspaces =~ '"10"' ? "active_workspace_10" : "empty_workspace_10"}
+			:onclick "i3-msg workspace 10" 
+			0
+		)
+	)
+)
+
+; exec brightnessctl to get the device name
+
+(defpoll brightness :interval "1s" "brightnessctl -m -d intel_backlight | awk -F, '{print substr($4, 0, length($4)-1)}'")
+(defvar show_brightness false)
+
+(defwidget brightness []
+    (eventbox 
+        :onhover "eww update show_brightness=true"
+        :onhoverlost "eww update show_brightness=false"
+        (box :class "brightness_icon"
+            :orientation "vertical"
+            :space-evenly "false"
+            (revealer :transition "slideup"
+                :duration "550ms"
+                :reveal show_brightness
+                (box :class "brightness_slider"
+                    :orientation "vertical"
+                    (scale :min 0
+                        :max 101
+                        :orientation "vertical"
+                        :flipped true
+                        :value brightness
+                        :onchange "brightnessctl set {}%"
+                    )
+                )
+            )
+        "󰃟"
+        )
+    )
+)
+
+(defpoll volume :interval "1s" "bash $HOME/.config/eww/scripts/getvol")
+(defvar show_volume false)
+
+(defwidget volume []
+    (eventbox 
+        :onhover "eww update show_volume=true"
+        :onhoverlost "eww update show_volume=false"
+        (box :class "volume_icon"
+            :orientation "vertical"
+            :space-evenly false
+            (revealer :transition "slideup"
+                :duration "550ms"
+                :reveal show_volume
+                (box :class "volume_slider"
+                    :orientation "vertical"
+                    (scale :min 0
+                        :max 101
+                        :orientation "vertical"
+                        :flipped true
+                        :value volume
+                        :onchange "amixer -D pulse sset Master {}%"
+                    )
+                )
+            )
+        (button :class "volume_button"
+            :onclick "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+            {volume != 0 ? "󰕾" : "󰝟"}
+        )
+        )
+    )
+)
+
+(defpoll hour :interval "1m" "date '+%H'")
+(defpoll min :interval "1m" "date '+%M'")
+
+(defwidget time []
+    (box :class "time"
+        :orientation "vertical"
+        :halign "center"
+        :valign "start"
+        hour
+        min
+    )
+)
+
+(defvar show_powermenu false)
+
+(defwidget powermenu []
+    (eventbox
+        :valign "end"
+        :onhover "eww update show_powermenu=true"
+        :onhoverlost "eww update show_powermenu=false"
+        (box :class "powermenu"
+            :orientation "vertical"
+            :space-evenly false
+            (revealer :transition "slideup"
+                :reveal show_powermenu
+                :duration "550ms"
+                (box :orientation "vertical"
+                    (button :class "reboot_button"
+                        :onclick "reboot"
+                        ""
+                    )
+                    (button :class "logout_button"
+                        :onclick "i3-msg exit"
+                        "󰍃"
+                    )
+                )
+            )
+            (button :class "poweroff_button"
+                "⏻"
+            )
+        )
+    )
+)

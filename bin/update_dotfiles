@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 cp -r ~/.config/i3 ~/arch/dotfiles/.config/
 cp -r ~/.config/i3status/ ~/arch/dotfiles/.config/
+cp -r ~/.config/eww/ ~/arch/dotfiles/.config/
 cp -r ~/.config/kitty ~/arch/dotfiles/.config/
 cp -r ~/.config/nvim ~/arch/dotfiles/.config/
 cp -r ~/.config/picom ~/arch/dotfiles/.config/
