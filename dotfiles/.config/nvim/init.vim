@@ -2,7 +2,7 @@ call plug#begin()
 
 Plug 'lervag/vimtex'
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
@@ -133,7 +133,7 @@ require'nvim-treesitter.configs'.setup {
   -- List of parsers to ignore installing (or "all")
   -- ignore_install = { "javascript" },
 
-  ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
+  -- If you need to change the installation directory of the parsers (see -> Advanced Setup)
   -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
 
   highlight = {
@@ -165,23 +165,22 @@ END
 
 " coc-vim
 
-:highlight CocFloating guibg=#181825
-:highlight CocMenuSel guibg=#363a4f
-:highlight CocSearch guifg=#89b4fa
-
-inoremap <silent><expr> <C-d>
-      \ coc#pum#visible() ? coc#pum#next(1) :
-      \ CheckBackspace() ? "\<C-d>" :
-      \ coc#refresh()
-inoremap <expr><C-e> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-function! CheckBackspace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+":highlight CocFloating guibg=#181825
+":highlight CocMenuSel guibg=#363a4f
+":highlight CocSearch guifg=#89b4fa
+"
+"inoremap <silent><expr> <C-d>
+      "\ coc#pum#visible() ? coc#pum#next(1) :
+      "\ CheckBackspace() ? "\<C-d>" :
+      "\ coc#refresh() inoremap <expr><C-e> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+"
+"inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              "\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+"
+"function! CheckBackspace() abort
+  "let col = col('.') - 1
+  "return !col || getline('.')[col - 1]  =~# '\s'
+"endfunction
 
 " ulti-snippets
 

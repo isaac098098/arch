@@ -120,11 +120,11 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+f exec --no-startup-id i3-msg fullscreen toggle && eww open --toggle catppuccin
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-#bindsym $mod+w layout tabbed
+bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -212,21 +212,21 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-        tray_output none
-        colors {
-            background         $base
-            statusline         $text
-            focused_statusline $text
-            focused_separator  $base
-            focused_workspace  $mauve $mauve $mantle
-            active_workspace   $base $base $blue
-            inactive_workspace $base $surface0 $text
-            urgent_workspace   $base $base $surface1
-            binding_mode       $base $base $surface1
-        }
-}
+#bar {
+        #status_command i3status
+        #tray_output none
+        #colors {
+            #background         $base
+            #statusline         $text
+            #focused_statusline $text
+            #focused_separator  $base
+            #focused_workspace  $mauve $mauve $mantle
+            #active_workspace   $base $base $blue
+            #inactive_workspace $base $surface0 $text
+            #urgent_workspace   $base $base $surface1
+            #binding_mode       $base $base $surface1
+        #}
+#}
 
 # target                 title     bg    text   indicator  border
 client.focused           $lavender $base $text  $mauve     $lavender
@@ -239,13 +239,16 @@ client.background        $base
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 5%+
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
-default_border pixel 2
+default_border pixel 0
 default_floating_border pixel 0
 
-exec_always --no-startup-id feh --bg-scale $HOME/Documents/images/wallpapers/buttons.png
+exec_always --no-startup-id feh --bg-scale $HOME/Documents/images/wallpapers/arch-rainbow-1920x1080.png
+exec --no-startup-id eww open catppuccin
+exec --no-startup-id xset s off
+exec --no-startup-id xset -dpms 
 
 bindsym $mod+q exec --no-startup-id setxkbmap -layout latam
-bindsym $mod+w exec --no-startup-id setxkbmap us -variant intl
+bindsym $mod+y exec --no-startup-id setxkbmap us -variant intl
 
 bindsym $mod+c [title="Layers"] move scratchpad
 bindsym $mod+z [title="Layers"] scratchpad show
@@ -256,3 +259,6 @@ bindsym $mod+t exec --no-startup-id killall unclutter
 focus_on_window_activation none
 
 smart_borders on
+
+gaps inner 15
+gaps left 65

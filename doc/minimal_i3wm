@@ -62,6 +62,8 @@ exec_always --no-startup-id feh --bg-scale $HOME/Documents/images/wallpapers/cat
 
 bindsym $mod+q exec --no-startup-id setxkbmap -layout latam
 bindsym $mod+w exec --no-startup-id setxkbmap us -variant intl
+exec --no-startup-id xset s off
+exec --no-startup-id xset -dpms 
 
 focus_on_window_activation none
 
