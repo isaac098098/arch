@@ -35,6 +35,7 @@
         :orientation "vertical"
         :valign "end"
         :space-evenly false
+        (battery)
         (brightness)
         (volume)
         (time)
@@ -59,45 +60,87 @@
 		(button
 			:class {focused_workspace == "1" ? "focused_workspace_1" : active_workspaces =~ '"1"' ? "active_workspace_1" : "empty_workspace_1"}
 			:onclick "i3-msg workspace 1" 
-			1
-		)(button
+            {focused_workspace == "1" ? "" : active_workspaces =~ '"1"' ? "" : ""}
+		)
+        (button
 			:class {focused_workspace == "2" ? "focused_workspace" : active_workspaces =~ '"2"' ? "active_workspace" : "empty_workspace"}
 			:onclick "i3-msg workspace 2" 
-			2
-		)(button
+            {focused_workspace == "2" ? "" : active_workspaces =~ '"2"' ? "" : ""}
+		)
+        (button
 			:class {focused_workspace == "3" ? "focused_workspace" : active_workspaces =~ '"3"' ? "active_workspace" : "empty_workspace"}
 			:onclick "i3-msg workspace 3" 
-			3
-		)(button
+            {focused_workspace == "3" ? "" : active_workspaces =~ '"3"' ? "" : ""}
+		)
+        (button
 			:class {focused_workspace == "4" ? "focused_workspace" : active_workspaces =~ '"4"' ? "active_workspace" : "empty_workspace"}
 			:onclick "i3-msg workspace 4" 
-			4
-		)(button
+            {focused_workspace == "4" ? "" : active_workspaces =~ '"4"' ? "" : ""}
+		)
+        (button
 			:class {focused_workspace == "5" ? "focused_workspace" : active_workspaces =~ '"5"' ? "active_workspace" : "empty_workspace"}
 			:onclick "i3-msg workspace 5" 
-			5
-		)(button
-			:class {focused_workspace == "6" ? "focused_workspace" : active_workspaces =~ '"6"' ? "active_workspace" : "empty_workspace"}
-			:onclick "i3-msg workspace 6" 
-			6
-		)(button
-			:class {focused_workspace == "7" ? "focused_workspace" : active_workspaces =~ '"7"' ? "active_workspace" : "empty_workspace"}
-			:onclick "i3-msg workspace 7" 
-			7
-		)(button
-			:class {focused_workspace == "8" ? "focused_workspace" : active_workspaces =~ '"8"' ? "active_workspace" : "empty_workspace"}
-			:onclick "i3-msg workspace 8" 
-			8
-		)(button
-			:class {focused_workspace == "9" ? "focused_workspace" : active_workspaces =~ '"9"' ? "active_workspace" : "empty_workspace"}
-			:onclick "i3-msg workspace 9" 
-			9
-		)(button
-			:class {focused_workspace == "10" ? "focused_workspace_10" : active_workspaces =~ '"10"' ? "active_workspace_10" : "empty_workspace_10"}
-			:onclick "i3-msg workspace 10" 
-			0
+            {focused_workspace == "5" ? "" : active_workspaces =~ '"5"' ? "" : ""}
 		)
+        ;(button
+			;:class {focused_workspace == "6" ? "focused_workspace" : active_workspaces =~ '"6"' ? "active_workspace" : "empty_workspace"}
+			;:onclick "i3-msg workspace 6" 
+            ;{focused_workspace == "6" ? "" : active_workspaces =~ '"6"' ? "" : ""}
+		;)
+        ;(button
+			;:class {focused_workspace == "7" ? "focused_workspace" : active_workspaces =~ '"7"' ? "active_workspace" : "empty_workspace"}
+			;:onclick "i3-msg workspace 7" 
+            ;{focused_workspace == "7" ? "" : active_workspaces =~ '"7"' ? "" : ""}
+		;)
+        ;(button
+			;:class {focused_workspace == "8" ? "focused_workspace" : active_workspaces =~ '"8"' ? "active_workspace" : "empty_workspace"}
+			;:onclick "i3-msg workspace 8" 
+            ;{focused_workspace == "8" ? "" : active_workspaces =~ '"8"' ? "" : ""}
+		;)
+        ;(button
+			;:class {focused_workspace == "9" ? "focused_workspace" : active_workspaces =~ '"9"' ? "active_workspace" : "empty_workspace"}
+			;:onclick "i3-msg workspace 9" 
+            ;{focused_workspace == "9" ? "" : active_workspaces =~ '"9"' ? "" : ""}
+		;)
+        ;(button
+			;:class {focused_workspace == "10" ? "focused_workspace_10" : active_workspaces =~ '"10"' ? "active_workspace_10" : "empty_workspace_10"}
+			;:onclick "i3-msg workspace 10" 
+            ;{focused_workspace == "10" ? "" : active_workspaces =~ '"10"' ? "" : ""}
+		;)
 	)
+)
+
+(defpoll battery_status :interval "5s" "cat /sys/class/power_supply/BAT0/status")
+(defpoll battery_capacity :interval "5s" "cat /sys/class/power_supply/BAT0/capacity")
+(defvar show_battery false)
+
+(defwidget battery []
+    (eventbox 
+        :onhover "eww update show_battery=true"
+        :onhoverlost "eww update show_battery=false"
+        (box :class "battery_icon"
+            :orientation "vertical"
+            :space-evenly "false"
+            (revealer :transition "slideup"
+                :duration "550ms"
+                :reveal show_battery
+                (box :class "battery_slider"
+                    :orientation "vertical"
+                    :space-evenly "false"
+                    (scale :min 0
+                        :max 101
+                        :class "battery_box"
+                        :active false
+                        :orientation "vertical"
+                        :flipped true
+                        :value battery_capacity
+                    )
+                battery_capacity
+                )
+            )
+        {battery_status == "Charging" ? "󰂄" : battery_status == "Full" ? "󰁹" : battery_capacity > 90 ? "󰂂" : battery_capacity > 80 ? "󰂁" : battery_capacity > 70 ? "󰂀" : battery_capacity > 60 ? "󰁿" : battery_capacity > 50 ? "󰁾" : battery_capacity > 40 ? "󰁽" : battery_capacity > 30 ? "󰁼" : battery_capacity > 20 ? "󰁻" : battery_capacity > 10 ? "󰁺" : battery_capacity > 0 ? "󰂎" : ""}
+        )
+    )
 )
 
 ; exec brightnessctl to get the device name

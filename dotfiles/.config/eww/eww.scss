@@ -6,11 +6,14 @@
 
 // Colores
 
+$pink: #f5c2e7;
+$mauve: #cba6f7;
 $red: #f38ba8;
 $maroon: #eba0ac;
 $yellow: #f9e2af;
 $green: #a6e3a1;
 $teal: #94e2d5;
+$saphire: #74c7ec;
 $blue: #89b4fa;
 $lavender: #b4befe;
 $text: #cdd6f4;
@@ -28,8 +31,8 @@ $crust: #11111b;
 // Es la ventana que contiene toda la barra
 
 .catppuccin {
-  margin: 15px 0px 15px 15px;
-  padding: 5px 5px 7px 5px;
+  margin: 18px 15px 18px 15px;
+  padding: 5px 5px 10px 5px;
   border-radius: 10px;
 }
 
@@ -37,61 +40,62 @@ $crust: #11111b;
 
 .catppuccin_dock {
   background-color: $crust;
-  color: $text;
+  color: $subtext1;
+  box-shadow: 3px 2px 6px rgba($color: #000000, $alpha: 0.8);
 }
 
 // Widgets
 
 .workspaces_box {
   font-family: Iosevka NF;
-  font-size: 13pt;
+  font-size: 14pt;
 }
 
 .active_workspace {
-  background-color: $surface1;
-  padding: 5px 10px 5px 10px;
+  background-color: $crust;
+  padding: 5px 8px 5px 0px;
   font-weight: bold;
 }
 
 .active_workspace_1 {
   border-radius: 7px 7px 0px 0px;
-  background-color: $surface1;
-  padding: 5px 10px 5px 10px;
+  background-color: $crust;
+  padding: 5px 8px 5px 0px;
   font-weight: bold;
 }
 
 .active_workspace_10 {
   border-radius: 0px 0px 7px 7px;
-  background-color: $surface1;
-  padding: 5px 10px 5px 10px;
+  background-color: $crust;
+  padding: 5px 8px 5px 0px;
   font-weight: bold;
 }
 
 .focused_workspace {
-  background-color: $lavender;
-  color: $base;
-  padding: 5px 10px 5px 10px;
+  background-color: $crust;
+  color: $blue;
+  padding: 5px 8px 5px 0px;
   font-weight: bold;
 }
 
 .focused_workspace_1 {
   border-radius: 7px 7px 0px 0px;
-  background-color: $lavender;
-  color: $base;
-  padding: 5px 10px 5px 10px;
+  background-color: $crust;
+  color: $blue;
+  padding: 5px 8px 5px 0px;
   font-weight: bold;
 }
 
 .focused_workspace_10 {
   border-radius: 0px 0px 7px 7px;
-  background-color: $lavender;
-  color: $base;
-  padding: 5px 10px 5px 10px;
+  background-color: $red;
+  color: $blue;
+  padding: 5px 8px 5px 0px;
   font-weight: bold;
 }
 
 .empty_workspace {
-  background-color: $mantle;
+  background-color: $crust;
   color: $subtext0;
   padding: 5px 10px 5px 10px;
   font-weight: bold;
@@ -99,7 +103,7 @@ $crust: #11111b;
 
 .empty_workspace_1 {
   border-radius: 10px 10px 0px 0px;
-  background-color: $mantle;
+  background-color: $crust;
   color: $subtext0;
   padding: 5px 10px 5px 10px;
   font-weight: bold;
@@ -107,7 +111,7 @@ $crust: #11111b;
 
 .empty_workspace_10 {
   border-radius: 0px 0px 10px 10px;
-  background-color: $mantle;
+  background-color: $crust;
   color: $subtext0;
   padding: 5px 10px 5px 10px;
   font-weight: bold;
@@ -138,6 +142,39 @@ $crust: #11111b;
   border-radius: 5px;
 }
 
+.battery_icon {
+  background-color: $crust;
+  font-family: Iosevka NF;
+  font-size: 17pt;
+  padding: 0px 0px 0px 1px;
+}
+
+.battery_slider {
+  font-family: Iosevka NF;
+  font-weight: bold;
+  color: $subtext0;
+  font-size: 14pt;
+  padding: 0px 0px 5px 0px;
+}
+
+.battery_slider scale trough highlight {
+  all: unset;
+  background-color: $green;
+  border-radius: 7px;
+}
+
+.battery_slider scale trough {
+  all: unset;
+  background-color: $surface1;
+  min-height: 50px;
+  min-width: 20px;
+  border-radius: 7px;
+}
+
+.battery_box {
+  padding: 0px 0px 5px 0px;
+}
+
 .brightness_icon {
   background-color: $crust;
   font-family: Iosevka NF;
@@ -165,7 +202,7 @@ $crust: #11111b;
 
 .time {
   background-color: $mantle;
-  color: $subtext0;
+  color: $subtext1;
   font-family: Iosevka NF;
   font-size: 14pt;
   font-weight: bold;

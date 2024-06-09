@@ -260,5 +260,5 @@ focus_on_window_activation none
 
 smart_borders on
 
-gaps inner 15
-gaps left 65
+gaps inner 20
+gaps left 63
