@@ -15,10 +15,10 @@ element-text, element-icon , mode-switcher {
 }
 
 window {
-	width: 26%;
-	height: 39%;
+	width: 25%;
+	height: 41%;
     border: 0px;
-    border-radius: 10px;
+    border-radius: 0px;
     border-color: @border-col;
     background-color: rgba(30,30,46,0.7);
 }
@@ -76,7 +76,7 @@ element-icon {
 element selected {
     background-color:  @selected-col ;
     text-color: #1e1e2e;
-	border-radius: 12px;
+	border-radius: 3px;
 }
 
 mode-switcher {

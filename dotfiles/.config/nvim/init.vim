@@ -317,6 +317,7 @@ set expandtab
 augroup vimtex
 	au!
 	au User VimtexEventCompileSuccess VimtexView
+	"au User VimtexEventCompileStarted VimtexView
 augroup END
 
 let g:vimtex_compiler_method = 'latexmk'
@@ -324,6 +325,11 @@ let g:vimtex_view_method = 'zathura'
 let g:vimtex_view_forward_search_on_start = 'false'
 let g:vimtex_quickfix_mode = 0
 let g:vimtex_view_automatic = 0
+
+" Remove lag due to match search
+let g:loaded_matchparen = 0
+let g:vimtex_motion_matchparen = 0
+let g:vimtex_matchparen_enabled = 0
 
 let g:vimtex_compiler_latexmk_engines = {
         \ '_'                : '-pdf -synctex=1',

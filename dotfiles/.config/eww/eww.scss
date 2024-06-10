@@ -33,7 +33,7 @@ $crust: #11111b;
 .catppuccin {
   margin: 20px 10px 20px 15px;
   padding: 5px 5px 8px 5px;
-  //border-radius: 10px;
+  border-radius: 0px;
 }
 
 // Caja con los módulos bottom, center y right
@@ -120,12 +120,12 @@ $crust: #11111b;
 .volume_icon {
   background-color: $mantle;
   font-family: Iosevka NF;
-  font-size: 15pt;
-  padding: 0px 10px 5px 6px;
+  font-size: 16pt;
+  padding: 0px 10px 6px 6px;
 }
 
 .volume_slider {
-  padding: 0px 0px 0px 4px;
+  padding: 0px 0px 5px 4px;
 }
 
 .volume_slider scale trough highlight {
@@ -154,7 +154,7 @@ $crust: #11111b;
   font-weight: bold;
   color: $subtext0;
   font-size: 14pt;
-  padding: 0px 0px 5px 0px;
+  padding: 0px 0px 3px 0px;
 }
 
 .battery_slider scale trough highlight {
@@ -179,11 +179,11 @@ $crust: #11111b;
   background-color: $mantle;
   font-family: Iosevka NF;
   font-size: 15pt;
-  padding: 5px 7px 5px 0px;
+  padding: 6px 7px 5px 0px;
 }
 
 .brightness_slider {
-  padding: 0px 0px 0px 7px;
+  padding: 0px 0px 5px 7px;
 }
 
 .brightness_slider scale trough highlight {
@@ -218,14 +218,14 @@ $crust: #11111b;
 
 .reboot_button {
   font-family: Iosevka NF;
-  font-size: 15pt;
+  font-size: 16pt;
   padding: 0px 2px 0px 0px;
 }
 
 .logout_button {
   font-family: Iosevka NF;
-  font-size: 15pt;
-  padding: 0px 2px 5px 0px;
+  font-size: 16pt;
+  padding: 0px 2px 0px 2px;
 }
 
 tooltip {
