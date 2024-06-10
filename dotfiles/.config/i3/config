@@ -257,7 +257,7 @@ bindsym $mod+u exec --no-startup-id unclutter -idle 3.0 -root
 bindsym $mod+t exec --no-startup-id killall unclutter
 bindsym $mod+o exec --no-startup-id eww open --toggle catppuccin
 bindsym $mod+p exec --no-startup-id eww open --toggle catppuccin
-
+bindsym Print exec --no-startup-id scrot -F "$HOME/Documents/images/screens/%Y%m%d-%H%M%S.png"
 focus_on_window_activation none
 
 smart_borders on

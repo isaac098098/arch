@@ -268,7 +268,7 @@ smap <silent><expr> wq luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Ta
 imap <silent><expr> <C-f> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-f>'
 smap <silent><expr> <C-f> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-f>'
 
-inoremap iu <Esc>
+inoremap 98 <Esc>
 map j gj
 map k gk
 
