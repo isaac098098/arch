@@ -268,7 +268,7 @@ smap <silent><expr> wq luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Ta
 imap <silent><expr> <C-f> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-f>'
 smap <silent><expr> <C-f> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-f>'
 
-inoremap 98 <Esc>
+inoremap oi <Esc>
 map j gj
 map k gk
 
@@ -344,7 +344,7 @@ let g:vimtex_compiler_latexmk_engines = {
         \}
 
 " Copiar todo el documento al clipboard
-nmap <C-d> ggVG"+y
+"nmap <C-d> ggVG"+y
 
 " Copiar al clipboard (Wayland), instalar wl-clipboard
 "nnoremap "+y :call system("wl-copy", @") <CR>
