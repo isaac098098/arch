@@ -26,6 +26,7 @@
         :orientation "vertical"
         :valign "start"
         :space-evenly false
+        (menu)
         (workspaces)
     )
 )
@@ -60,27 +61,27 @@
 		(button
 			:class {focused_workspace == "1" ? "focused_workspace_1" : active_workspaces =~ '"1"' ? "active_workspace_1" : "empty_workspace_1"}
 			:onclick "i3-msg workspace 1" 
-            {focused_workspace == "1" ? "" : active_workspaces =~ '"1"' ? "" : ""}
+            ""
 		)
         (button
-			:class {focused_workspace == "2" ? "focused_workspace" : active_workspaces =~ '"2"' ? "active_workspace" : "empty_workspace"}
+			:class {focused_workspace == "2" ? "focused_workspace_2" : active_workspaces =~ '"2"' ? "active_workspace_2" : "empty_workspace_2"}
 			:onclick "i3-msg workspace 2" 
-            {focused_workspace == "2" ? "" : active_workspaces =~ '"2"' ? "" : ""}
+            "󰝰"
 		)
         (button
-			:class {focused_workspace == "3" ? "focused_workspace" : active_workspaces =~ '"3"' ? "active_workspace" : "empty_workspace"}
+			:class {focused_workspace == "3" ? "focused_workspace_3" : active_workspaces =~ '"3"' ? "active_workspace_3" : "empty_workspace_3"}
 			:onclick "i3-msg workspace 3" 
-            {focused_workspace == "3" ? "" : active_workspaces =~ '"3"' ? "" : ""}
+            "󰈹"
 		)
         (button
-			:class {focused_workspace == "4" ? "focused_workspace" : active_workspaces =~ '"4"' ? "active_workspace" : "empty_workspace"}
+			:class {focused_workspace == "4" ? "focused_workspace_4" : active_workspaces =~ '"4"' ? "active_workspace_4" : "empty_workspace_4"}
 			:onclick "i3-msg workspace 4" 
-            {focused_workspace == "4" ? "" : active_workspaces =~ '"4"' ? "" : ""}
+            ""
 		)
         (button
-			:class {focused_workspace == "5" ? "focused_workspace" : active_workspaces =~ '"5"' ? "active_workspace" : "empty_workspace"}
+			:class {focused_workspace == "5" ? "focused_workspace_5" : active_workspaces =~ '"5"' ? "active_workspace_5" : "empty_workspace_5"}
 			:onclick "i3-msg workspace 5" 
-            {focused_workspace == "5" ? "" : active_workspaces =~ '"5"' ? "" : ""}
+            "󰋩"
 		)
         ;(button
 			;:class {focused_workspace == "6" ? "focused_workspace" : active_workspaces =~ '"6"' ? "active_workspace" : "empty_workspace"}
@@ -247,5 +248,12 @@
                 "⏻"
             )
         )
+    )
+)
+
+(defwidget menu []
+    (box :class "menu"
+        :halign "center"
+        "󰣇"
     )
 )

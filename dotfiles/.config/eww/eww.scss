@@ -20,6 +20,9 @@ $text: #cdd6f4;
 $subtext1: #bac2de;
 $subtext0: #a6adc8;
 $overlay2: #9399b2;
+$overlay1: #7f849c;
+$overlay0: #6c7086;
+$surface2: #585b70;
 $surface1: #45475a;
 $surface0: #313244;
 $base: #1e1e2e;
@@ -46,75 +49,109 @@ $crust: #11111b;
 
 // Widgets
 
-.workspaces_box {
+.menu {
+  background-color: $mantle;
+  color: $saphire;
   font-family: Iosevka NF;
-  font-size: 14pt;
+  font-size: 19pt;
+  padding: 0px 8px 5px 0px;
 }
 
-.active_workspace {
-  background-color: $mantle;
-  padding: 5px 8px 5px 0px;
-  font-weight: bold;
+.workspaces_box {
+  background-color: $base;
+  font-family: Iosevka NF;
+  border-radius: 6px;
+  padding: 0px 6px 2px 5px;
 }
 
 .active_workspace_1 {
-  border-radius: 7px 7px 0px 0px;
-  background-color: $mantle;
-  padding: 5px 8px 5px 0px;
-  font-weight: bold;
+  color: $subtext0;
+  font-size: 19pt;
+  padding: 0px 4px 4px 0px;
 }
 
-.active_workspace_10 {
-  border-radius: 0px 0px 7px 7px;
-  background-color: $mantle;
-  padding: 5px 8px 5px 0px;
-  font-weight: bold;
+.active_workspace_2 {
+  color: $subtext0;
+  font-size: 16pt;
+  padding: 0px 6px 4px 0px;
 }
 
-.focused_workspace {
-  background-color: $mantle;
-  color: $blue;
-  padding: 5px 8px 5px 0px;
-  font-weight: bold;
+.active_workspace_3 {
+  color: $subtext0;
+  font-size: 17pt;
+  padding: 0px 6px 7px 0px;
+}
+
+.active_workspace_4 {
+  color: $subtext0;
+  font-size: 15pt;
+  padding: 0px 6px 7px 0px;
+}
+
+.active_workspace_5 {
+  color: $subtext0;
+  font-size: 16pt;
+  padding: 0px 4px 0px 0px;
 }
 
 .focused_workspace_1 {
-  border-radius: 7px 7px 0px 0px;
-  background-color: $mantle;
-  color: $blue;
-  padding: 5px 8px 5px 0px;
-  font-weight: bold;
+  color: $lavender;
+  font-size: 19pt;
+  padding: 0px 4px 4px 0px;
 }
 
-.focused_workspace_10 {
-  border-radius: 0px 0px 7px 7px;
-  background-color: $red;
-  color: $blue;
-  padding: 5px 8px 5px 0px;
-  font-weight: bold;
+.focused_workspace_2 {
+  color: $lavender;
+  font-size: 16pt;
+  padding: 0px 6px 4px 0px;
 }
 
-.empty_workspace {
-  background-color: $mantle;
-  color: $subtext0;
-  padding: 5px 10px 5px 10px;
-  font-weight: bold;
+.focused_workspace_3 {
+  color: $lavender;
+  font-size: 17pt;
+  padding: 0px 6px 7px 0px;
+}
+
+.focused_workspace_4 {
+  color: $lavender;
+  font-size: 15pt;
+  padding: 0px 6px 7px 0px;
+}
+
+.focused_workspace_5 {
+  color: $lavender;
+  font-size: 16pt;
+  padding: 0px 4px 0px 0px;
 }
 
 .empty_workspace_1 {
-  border-radius: 10px 10px 0px 0px;
-  background-color: $mantle;
-  color: $subtext0;
-  padding: 5px 10px 5px 10px;
-  font-weight: bold;
+  color: $surface2;
+  font-size: 19pt;
+  padding: 0px 4px 4px 0px;
 }
 
-.empty_workspace_10 {
-  border-radius: 0px 0px 10px 10px;
-  background-color: $mantle;
-  color: $subtext0;
-  padding: 5px 10px 5px 10px;
-  font-weight: bold;
+.empty_workspace_2 {
+  color: $surface2;
+  font-size: 16pt;
+  padding: 0px 6px 4px 0px;
+}
+
+.empty_workspace_3 {
+  color: $surface2;
+  font-size: 17pt;
+  padding: 0px 6px 7px 0px;
+}
+
+.empty_workspace_4 {
+  color: $surface2;
+  font-size: 15pt;
+  padding: 0px 6px 7px 0px;
+}
+
+.empty_workspace_5 {
+  color: $surface2;
+  font-size: 16pt;
+  padding: 0px 4px 0px 0px;
 }
 
 .volume_icon {
