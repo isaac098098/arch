@@ -49,7 +49,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;
 
 (deflisten active_workspaces "xprop -spy -root _NET_DESKTOP_NAMES")
-(deflisten focused_workspace "bash $HOME/.config/eww/scripts/get_active_workspace")
+(defpoll focused_workspace :interval "0.05s" "i3-msg -t get_workspaces | jq '.[] | select(.focused).num'")
+;(deflisten focused_workspace "bash $HOME/.config/eww/scripts/get_active_workspace")
 
 (defwidget workspaces []
 	(box
@@ -245,6 +246,7 @@
                 )
             )
             (button :class "poweroff_button"
+                :onclick "shutdown -h now"
                 "⏻"
             )
         )
