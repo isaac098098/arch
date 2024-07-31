@@ -20,6 +20,8 @@ Plug 'L3MON4D3/LuaSnip', {'tag': 'v2.*', 'do': 'make install_jsregexp'}
 
 Plug 'nvim-lualine/lualine.nvim'
 
+Plug 'folke/zen-mode.nvim'
+
 call plug#end()
 
 filetype plugin indent on
@@ -256,21 +258,35 @@ end, {
 EOF
 
 " Use Tab to expand and jump through snippets
-imap <silent><expr> jk luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
+imap <silent><expr> jk luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : 'jk'
 "imap <silent><expr> ll luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<Tab>'
-smap <silent><expr> jk luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<Tab>'
+smap <silent><expr> jk luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : 'jk'
 
 " Use Shift-Tab to jump backwards through snippets
-imap <silent><expr> wq luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
-smap <silent><expr> wq luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
+imap <silent><expr> wq luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : 'wq'
+smap <silent><expr> wq luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : 'wq'
 
 " Cycle forward through choice nodes with Control-f (for example)
-imap <silent><expr> <C-f> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-f>'
-smap <silent><expr> <C-f> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-f>'
+imap <silent><expr> <C-j> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-j>'
+smap <silent><expr> <C-j> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-j>'
+imap <silent><expr> <C-k> luasnip#choice_active() ? '<Plug>luasnip-prev-choice' : '<C-k>'
+smap <silent><expr> <C-k> luasnip#choice_active() ? '<Plug>luasnip-prev-choice' : '<C-k>'
+
+" Keybindings
+
+" Insert
 
 inoremap oi <Esc>
-map j gj
-map k gk
+
+" Normal
+
+nmap j gj
+nmap k gk
+nmap <CR> :write<CR>
+
+" Select
+
+snoremap oi <Esc>
 
 " vim-snippets
 
@@ -351,3 +367,97 @@ let g:vimtex_compiler_latexmk_engines = {
 
 " Estilo del cursor
 set guicursor=i:hor10
+
+" zen-mode
+
+autocmd VimEnter * hi ZenBg ctermbg=NONE guibg=#181825
+
+lua << EOF
+
+local api = vim.api
+
+api.nvim_set_keymap("n", "<leader>zm", ":ZenMode<CR>", {})
+
+require("zen-mode").setup {
+  window = {
+    backdrop = 0, -- shade the backdrop of the Zen window. Set to 1 to keep the same as Normal
+    -- height and width can be:
+    -- * an absolute number of cells when > 1
+    -- * a percentage of the width / height of the editor when <= 1
+    -- * a function that returns the width or the height
+    width = 0.95, -- width of the Zen window
+    height = 0.95, -- height of the Zen window
+    -- by default, no options are changed for the Zen window
+    -- uncomment any of the options below, or add other vim.wo options you want to apply
+    options = {
+      -- signcolumn = "no", -- disable signcolumn
+      number = false, -- disable number column
+      -- relativenumber = false, -- disable relative numbers
+      -- cursorline = false, -- disable cursorline
+      -- cursorcolumn = false, -- disable cursor column
+      -- foldcolumn = "0", -- disable fold column
+      -- list = false, -- disable whitespace characters
+    },
+  },
+  plugins = {
+    -- disable some global vim options (vim.o...)
+    -- comment the lines to not apply the options
+    options = {
+      enabled = true,
+      ruler = false, -- disables the ruler text in the cmd line area
+      showcmd = false, -- disables the command in the last line of the screen
+      -- you may turn on/off statusline in zen mode by setting 'laststatus' 
+      -- statusline will be shown only if 'laststatus' == 3
+      laststatus = 1, -- turn off the statusline in zen mode
+    },
+    twilight = { enabled = false}, -- enable to start Twilight when zen mode opens
+    gitsigns = { enabled = false }, -- disables git signs
+    tmux = { enabled = false }, -- disables the tmux statusline
+    -- this will change the font size on kitty when in zen mode
+    -- to make this work, you need to set the following kitty options:
+    -- - allow_remote_control socket-only
+    -- - listen_on unix:/tmp/kitty
+    kitty = {
+      enabled = false,
+      font = "+4", -- font size increment
+    },
+    -- this will change the font size on alacritty when in zen mode
+    -- requires  Alacritty Version 0.10.0 or higher
+    -- uses `alacritty msg` subcommand to change font size
+    alacritty = {
+      enabled = false,
+      font = "14", -- font size
+    },
+    -- this will change the font size on wezterm when in zen mode
+    -- See alse also the Plugins/Wezterm section in this projects README
+    wezterm = {
+      enabled = false,
+      -- can be either an absolute font size or the number of incremental steps
+      font = "+4", -- (10% increase per step)
+    },
+  },
+  -- callback where you can add custom code when the Zen window opens
+  on_open = function(win)
+  		-- catppuccin-mocha
+
+        vim.cmd("highlight MsgArea guifg=#1e1e2f")
+        vim.cmd("highlight ModeMsg guifg=#1e1e2f")
+
+		-- nord
+
+        --vim.cmd("highlight MsgArea guifg=#2E3440")
+        --vim.cmd("highlight ModeMsg guifg=#2E3440")
+  end,
+  -- callback where you can add custom code when the Zen window closes
+  on_close = function()
+  		-- catppuccin-mocha
+		
+        vim.cmd("highlight MsgArea guifg=#cdd6f4")
+
+  		-- nord
+		
+        --vim.cmd("highlight MsgArea guifg=#ECEFF4")
+  end,
+}
+
+EOF
