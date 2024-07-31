@@ -342,6 +342,9 @@ let g:vimtex_view_forward_search_on_start = 'false'
 let g:vimtex_quickfix_mode = 0
 let g:vimtex_view_automatic = 0
 
+" zen-mode
+let g:vimtex_compiler_silent = 1
+
 " Remove lag due to match search
 let g:loaded_matchparen = 0
 let g:vimtex_motion_matchparen = 0
@@ -440,8 +443,8 @@ require("zen-mode").setup {
   on_open = function(win)
   		-- catppuccin-mocha
 
-        vim.cmd("highlight MsgArea guifg=#1e1e2f")
-        vim.cmd("highlight ModeMsg guifg=#1e1e2f")
+        vim.cmd("highlight MsgArea guifg=#181825")
+        vim.cmd("highlight ModeMsg guifg=#181825")
 
 		-- nord
 
