@@ -7,7 +7,7 @@ s(
         \usepackage[left=1.6cm,right=1.6cm,top=2.5cm,bottom=2.5cm,headheight=1.0cm]{geometry} %Headheight controla la distancia de la regla del encabezado a su texto inferior
         \usepackage[utf8]{inputenc} %Formato de codificación
         \usepackage{amsthm} %Símbolos
-        \usepackage{amsmath} %Símbolos
+        \usepackage[tbtags]{amsmath}
         \usepackage{amssymb} %Símbolos
         \usepackage{enumitem} %Listas
         \usepackage{siunitx} %Unidades del SI
@@ -36,6 +36,7 @@ s(
         %\usepackage{booktabs} %Estilo de tablas
         \usepackage{titlesec} %Estilo de secciones
         %\usepackage{lipsum} %Texto de prueba
+		%\usepackage{tabularx} %Saltos de línea en tablas
 
         % Matemáticas
 
@@ -116,14 +117,19 @@ s(
         %pdfkeywords={}
         %}
 
-        % Macros
+		% Trigonometric functions
 
-        \newcommand{\N}{\mathbb{N}}
-        \newcommand{\Z}{\mathbb{Z}}
-        \newcommand{\Q}{\mathbb{Q}}
-        \newcommand{\R}{\mathbb{R}}
-        \newcommand{\C}{\mathbb{C}}
-        \newcommand{\F}{\mathbb{F}}
+		\DeclareMathOperator{\arccot}{arccot}
+		\DeclareMathOperator{\arcsec}{arcsec}
+		\DeclareMathOperator{\arccsc}{arccsc}
+		\DeclareMathOperator{\sech}{sech}
+		\DeclareMathOperator{\csch}{csch}
+		\DeclareMathOperator{\arcsinh}{arcsinh}
+		\DeclareMathOperator{\arccosh}{arccosh}
+		\DeclareMathOperator{\arctanh}{arctanh}
+		\DeclareMathOperator{\arccoth}{arccoth}
+		\DeclareMathOperator{\arcsech}{arcsech}
+		\DeclareMathOperator{\arccsch}{arccsch}
 
         \begin{document}
         \maketitle
@@ -167,7 +173,7 @@ s(
         \usepackage[utf8]{inputenc} %Formato de codificación
         \usepackage[activeacute,spanish,es-tabla,es-lcroman]{babel} %Acentos, 'Figura' para gráficas y 'Tabla' para tablas
         \usepackage{amsthm} %Teoremas
-        \usepackage{amsmath} %Símbolos
+        \usepackage[tbtags]{amsmath}
         \usepackage{amssymb} %Símbolos
         \usepackage[hyphens]{url} %URL's en referencias
         \usepackage[hidelinks]{hyperref} %URL's
@@ -203,6 +209,7 @@ s(
         %\usepackage{leftindex} %Índices izquierdos
         %\usepackage{esvect} %Mejores flechas de vectores
         %\usepackage{statmath} %Negritas en modo matemático, /bf(any letter)
+		%\usepackage{tabularx} %Saltos de línea en tablas
 
         % Matemáticas
 
@@ -316,29 +323,46 @@ s(
         %\markboth{Prólogo}{Prólogo} %Mostrar correctamente el nombre de la sección en el header
         %\addcontentsline{toc}{section}{Prólogo} %Añadir a la tabla de contenidos
 
-        % Macros
+		% Trigonometric functions
 
-        \newcommand{\N}{\mathbb{N}}
-        \newcommand{\Z}{\mathbb{Z}}
-        \newcommand{\Q}{\mathbb{Q}}
-        \newcommand{\R}{\mathbb{R}}
-        \newcommand{\C}{\mathbb{C}}
-        \newcommand{\F}{\mathbb{F}}
-        \newcommand{\vcc}{\textnormal{\O}}
-        \newcommand{\dif}{\textnormal{d}}
-        \newcommand{\Dif}{\textnormal{ d}}
-        \newcommand{\der}[2]{\frac{\dif#1}{\dif#2}}
-        \newcommand{\nder}[3]{\frac{\dif^{#1}#2}{\dif#3^{#1}}}
-        \newcommand{\prt}[2]{\frac{\partial#1}{\partial#2}}
-        \newcommand{\nprt}[3]{\frac{\partial^{#1}#2}{\partial#3^{#1}}}
-        \newcommand{\derOp}[2]{\frac{\dif}{\dif#2}#1}
-        \newcommand{\nderOp}[3]{\frac{\dif^{#1}}{\dif#3^{#1}}#2}
-        \newcommand{\prtOp}[2]{\frac{\partial}{\partial#2}#1}
-        \newcommand{\nprtOp}[3]{\frac{\partial^{#1}}{\partial#3^{#1}}#2}
+		\DeclareMathOperator{\arccot}{arccot}
+		\DeclareMathOperator{\arcsec}{arcsec}
+		\DeclareMathOperator{\arccsc}{arccsc}
+		\DeclareMathOperator{\sech}{sech}
+		\DeclareMathOperator{\csch}{csch}
+		\DeclareMathOperator{\arcsinh}{arcsinh}
+		\DeclareMathOperator{\arccosh}{arccosh}
+		\DeclareMathOperator{\arctanh}{arctanh}
+		\DeclareMathOperator{\arccoth}{arccoth}
+		\DeclareMathOperator{\arcsech}{arcsech}
+		\DeclareMathOperator{\arccsch}{arccsch}
 
-        % Macros específicos de las notas
+		% Logic
 
-        \newcommand{\tp}{\mathcal{T}}
+		\let\oldforall\forall
+		\renewcommand{\forall}{\:\oldforall\,}
+		\let\oldexists\exists
+		\renewcommand{\exists}{\:\oldexists\:}
+		\let\oldnexists\nexists
+		\renewcommand{\nexists}{\:\oldnexists\:}
+
+		% Sets
+
+		\newcommand{\std}{\, : \,}
+		
+		% Derivatives
+
+		\newcommand{\dx}{\,\text{d}}
+		\newcommand{\dr}{\text{d}}
+		\newcommand{\der}[2]{\frac{\dr#1}{\dr#2}}
+		\newcommand{\Der}[2]{\frac{\dr}{\dr#2}#1}
+		\newcommand{\ndr}[3]{\frac{\dr^{#1}#2}{\dr#3^{#1}}}
+		\newcommand{\Ndr}[3]{\frac{\dr^{#1}}{\dr#3^{#1}}#2}
+		\newcommand{\pdr}[2]{\frac{\partial#1}{\partial#2}}
+		\newcommand{\Pdr}[2]{\frac{\partial}{\partial#2}#1}
+		\newcommand{\npd}[3]{\frac{\partial^{#1}#2}{\partial#3^{#1}}}
+		\newcommand{\Npd}[3]{\frac{\partial^{#1}}{\partial#3^{#1}}#2}
+		\newcommand{\evl}[1]{\mathrel{\bigg|_{#1}}}
 
         %\let\oldcap\cap
         %\renewcommand{\cap}{\mathbin{\scaleobj{1.1}{\oldcap}}}
@@ -493,7 +517,7 @@ s(
         \usepackage[left=3.0cm,right=3.0cm,top=3.0cm,bottom=2.5cm,headheight=0.8cm]{geometry} %Headheight controla la distancia de la regla del encabezado a su texto inferior
         \usepackage[utf8]{inputenc} %Formato de codificación
         \usepackage[activeacute,spanish,es-tabla,es-lcroman]{babel} %Acentos, 'Figura' para gráficas y 'Tabla' para tablas
-        \usepackage{amsthm} %Símbolos
+        \usepackage[tbtags]{amsmath}
         \usepackage{amsmath} %Símbolos
         \usepackage{amssymb} %Símbolos
         \usepackage[hyphens]{url} %URL's en referencias
@@ -529,6 +553,7 @@ s(
         %\usepackage{centernot} %Para el símbolo "no divide"
         %\usepackage{leftindex} %Índices izquierdos
         %\usepackage{esvect} %Mejores flechas de vectores
+		%\usepackage{tabularx} %Saltos de línea en tablas
 
         % Matemáticas
 
@@ -643,29 +668,46 @@ s(
         %pdfkeywords={}
         %}
 
-        % Macros
+		% Trigonometric functions
 
-        \newcommand{\N}{\mathbb{N}}
-        \newcommand{\Z}{\mathbb{Z}}
-        \newcommand{\Q}{\mathbb{Q}}
-        \newcommand{\R}{\mathbb{R}}
-        \newcommand{\C}{\mathbb{C}}
-        \newcommand{\F}{\mathbb{F}}
-        \newcommand{\vcc}{\textnormal{\O}}
-        \newcommand{\dif}{\textnormal{d}}
-        \newcommand{\Dif}{\textnormal{ d}}
-        \newcommand{\der}[2]{\frac{\dif#1}{\dif#2}}
-        \newcommand{\nder}[3]{\frac{\dif^{#1}#2}{\dif#3^{#1}}}
-        \newcommand{\prt}[2]{\frac{\partial#1}{\partial#2}}
-        \newcommand{\nprt}[3]{\frac{\partial^{#1}#2}{\partial#3^{#1}}}
-        \newcommand{\derOp}[2]{\frac{\dif}{\dif#2}#1}
-        \newcommand{\nderOp}[3]{\frac{\dif^{#1}}{\dif#3^{#1}}#2}
-        \newcommand{\prtOp}[2]{\frac{\partial}{\partial#2}#1}
-        \newcommand{\nprtOp}[3]{\frac{\partial^{#1}}{\partial#3^{#1}}#2}
+		\DeclareMathOperator{\arccot}{arccot}
+		\DeclareMathOperator{\arcsec}{arcsec}
+		\DeclareMathOperator{\arccsc}{arccsc}
+		\DeclareMathOperator{\sech}{sech}
+		\DeclareMathOperator{\csch}{csch}
+		\DeclareMathOperator{\arcsinh}{arcsinh}
+		\DeclareMathOperator{\arccosh}{arccosh}
+		\DeclareMathOperator{\arctanh}{arctanh}
+		\DeclareMathOperator{\arccoth}{arccoth}
+		\DeclareMathOperator{\arcsech}{arcsech}
+		\DeclareMathOperator{\arccsch}{arccsch}
+		
+		% Logic
 
-        % Macros específicos de las notas
+		\let\oldforall\forall
+		\renewcommand{\forall}{\:\oldforall\,}
+		\let\oldexists\exists
+		\renewcommand{\exists}{\:\oldexists\:}
+		\let\oldnexists\nexists
+		\renewcommand{\nexists}{\:\oldnexists\:}
 
-        \newcommand{\tp}{\mathcal{T}}
+		% Sets
+
+		\newcommand{\std}{\, : \,}
+
+		% Derivatives
+
+		\newcommand{\dx}{\,\text{d}}
+		\newcommand{\dr}{\text{d}}
+		\newcommand{\der}[2]{\frac{\dr#1}{\dr#2}}
+		\newcommand{\Der}[2]{\frac{\dr}{\dr#2}#1}
+		\newcommand{\ndr}[3]{\frac{\dr^{#1}#2}{\dr#3^{#1}}}
+		\newcommand{\Ndr}[3]{\frac{\dr^{#1}}{\dr#3^{#1}}#2}
+		\newcommand{\pdr}[2]{\frac{\partial#1}{\partial#2}}
+		\newcommand{\Pdr}[2]{\frac{\partial}{\partial#2}#1}
+		\newcommand{\npd}[3]{\frac{\partial^{#1}#2}{\partial#3^{#1}}}
+		\newcommand{\Npd}[3]{\frac{\partial^{#1}}{\partial#3^{#1}}#2}
+		\newcommand{\evl}[1]{\mathrel{\bigg|_{#1}}}
 
         %\let\oldcap\cap
         %\renewcommand{\cap}{\mathbin{\scaleobj{1.1}{\oldcap}}}
@@ -814,7 +856,7 @@ s(
         \documentclass[letterpaper,twoside,11pt]{article}
         \usepackage[left=1.6cm,right=1.6cm,top=2.5cm,bottom=2.0cm,headheight=1.0cm]{geometry} %Headheight controla la distancia de la regla del encabezado a su texto inferior
         \usepackage[utf8]{inputenc} %Formato de codificación
-        \usepackage{amsmath} %Símbolos
+        \usepackage[tbtags]{amsmath}
         \usepackage{amssymb} %Símbolos
         \usepackage{enumitem} %Listas
         \usepackage{multicol} %Multicolumnas
@@ -904,15 +946,6 @@ s(
         %pdfkeywords={}
         %}
 
-        % Macros
-
-        \newcommand{\N}{\mathbb{N}}
-        \newcommand{\Z}{\mathbb{Z}}
-        \newcommand{\Q}{\mathbb{Q}}
-        \newcommand{\R}{\mathbb{R}}
-        \newcommand{\C}{\mathbb{C}}
-        \newcommand{\F}{\mathbb{F}}
-
         \begin{document}
         %\maketitle
         \thispagestyle{first}
@@ -957,7 +990,7 @@ s(
     [[
     \documentclass{article}
     \usepackage[utf8]{inputenc}
-    \usepackage{amsmath,amssymb,amsfonts,amsthm}
+    \usepackage[tbtags]{amsmath}
 
     \title{<>}
     \author{<>}

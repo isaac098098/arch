@@ -262,7 +262,7 @@ focus_on_window_activation none
 
 smart_borders on
 
-gaps inner 20
+gaps inner 15
 gaps left 63
 
 for_window [class="Gnome-pomodoro"] floating enable
