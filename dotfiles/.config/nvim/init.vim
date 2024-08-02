@@ -288,6 +288,10 @@ nmap <CR> :write<CR>
 
 snoremap oi <Esc>
 
+" Visual
+
+snoremap oi <Esc>
+
 " vim-snippets
 
 "let g:UltiSnipsExpandTrigger       = '<Tab>'    " use Tab to expand snippets
