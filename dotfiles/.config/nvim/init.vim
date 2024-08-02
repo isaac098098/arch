@@ -290,7 +290,7 @@ snoremap oi <Esc>
 
 " Visual
 
-snoremap oi <Esc>
+vnoremap oi <Esc>
 
 " vim-snippets
 
