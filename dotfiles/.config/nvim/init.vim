@@ -240,7 +240,7 @@ local untrigger = function()
     node_to[1],
     node_to[2],
     --{ trig }
-    {" "}
+    {""}
   )
   -- reset the cursor-position to ahead the trigger
   vim.fn.setpos(".", { 0, node_from[1] + 1, node_from[2] + 1 + string.len(trig) })
@@ -334,11 +334,10 @@ set expandtab
 	"au User VimtexEventCompileSuccess call Synctex()
 "augroup END
 
-augroup vimtex
-	au!
-	au User VimtexEventCompileSuccess VimtexView
-	"au User VimtexEventCompileStarted VimtexView
-augroup END
+"augroup vimtex
+	"au!
+	"au User VimtexEventCompileSuccess VimtexView
+"augroup END
 
 let g:vimtex_compiler_method = 'latexmk'
 let g:vimtex_view_method = 'zathura'
