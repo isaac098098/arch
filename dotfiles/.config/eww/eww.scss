@@ -35,7 +35,7 @@ $crust: #11111b;
 
 .catppuccin {
   margin: 15px 10px 15px 15px;
-  padding: 5px 5px 8px 5px;
+  padding: 5px 6px 8px 7px;
   border-radius: 3px;
 }
 
@@ -205,7 +205,7 @@ $crust: #11111b;
   background-color: $surface1;
   min-height: 50px;
   min-width: 20px;
-  border-radius: 7px;
+  border-radius: 5px 5px 0px 0px;
 }
 
 .battery_box {
@@ -244,13 +244,14 @@ $crust: #11111b;
   font-size: 13pt;
   font-weight: bold;
   padding: 5px 5px 5px 5px;
+  margin: 3px 0px 0px 0px;
   border-radius: 6px;
 }
 
 .poweroff_button {
   font-family: Iosevka NF;
   font-size: 14pt;
-  padding: 5px 6px 0px 0px;
+  padding: 8px 6px 0px 0px;
 }
 
 .reboot_button {

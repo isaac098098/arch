@@ -37,8 +37,8 @@
         :valign "end"
         :space-evenly false
         (battery)
-        (brightness)
-        (volume)
+        ;(brightness)
+        ;(volume)
         (time)
         (powermenu)
     )
@@ -123,9 +123,9 @@
         (box :class "battery_icon"
             :orientation "vertical"
             :space-evenly "false"
-            (revealer :transition "slideup"
-                :duration "550ms"
-                :reveal show_battery
+            ;(revealer :transition "slideup"
+                ;:duration "550ms"
+                ;:reveal show_battery
                 (box :class "battery_slider"
                     :orientation "vertical"
                     :space-evenly "false"
@@ -137,10 +137,10 @@
                         :flipped true
                         :value battery_capacity
                     )
-                battery_capacity
+                ;battery_capacity "%"
                 )
-            )
-        {battery_status == "Charging" ? "󰂄" : battery_status == "Full" ? "󰁹" : battery_capacity > 90 ? "󰂂" : battery_capacity > 80 ? "󰂁" : battery_capacity > 70 ? "󰂀" : battery_capacity > 60 ? "󰁿" : battery_capacity > 50 ? "󰁾" : battery_capacity > 40 ? "󰁽" : battery_capacity > 30 ? "󰁼" : battery_capacity > 20 ? "󰁻" : battery_capacity > 10 ? "󰁺" : battery_capacity > 0 ? "󰂎" : ""}
+            ;)
+        ;{battery_status == "Charging" ? "󰂄" : battery_status == "Full" ? "󰁹" : battery_capacity > 90 ? "󰂂" : battery_capacity > 80 ? "󰂁" : battery_capacity > 70 ? "󰂀" : battery_capacity > 60 ? "󰁿" : battery_capacity > 50 ? "󰁾" : battery_capacity > 40 ? "󰁽" : battery_capacity > 30 ? "󰁼" : battery_capacity > 20 ? "󰁻" : battery_capacity > 10 ? "󰁺" : battery_capacity > 0 ? "󰂎" : ""}
         )
     )
 )
