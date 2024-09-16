@@ -196,14 +196,14 @@ s({trig = "nn", name = "New equation"},
         c(1,
             {
                 {
-                    t("\\begin{equation}"),
-					t({"",""}), t("    "), d(1,get_visual),
-					t({"",""}), t("\\end{equation}")
-                },
-                {
                     t("\\begin{equation*}"),
 					t({"",""}), t("    "), d(1,get_visual),
 					t({"",""}), t("\\end{equation*}")
+                },
+                {
+                    t("\\begin{equation}"),
+					t({"",""}), t("    "), d(1,get_visual),
+					t({"",""}), t("\\end{equation}")
                 }
             }
         )
@@ -385,12 +385,11 @@ s({trig = "tag", name = "Equation tag", snippetType = "autosnippet"},
     {condition = in_mathzone}
 ),
 
-s({trig = "teq", name = "Last number equation", snippetType = "autosnippet"},
+s({trig = "teq", name = "Last number equation"},
     {
 		f(function(_,snip) return snip.captures[1] end),
         t("\\theequation")
-    },
-    {condition = in_mathzone}
+    }
 ),
 
 -- Matrix-like environments
@@ -464,7 +463,7 @@ s({trig = "¨", name = "Superscript", snippetType = "autosnippet", wordTrig = fa
     {condition = in_mathzone}
 ),
 
-s({trig = "'", name = "Subscript and superscript", snippetType = "autosnippet", wordtrig = false},
+s({trig = "\'", name = "Subscript and superscript", snippetType = "autosnippet", wordTrig = false},
     {
 		t("_{"), i(1), t("}^{"), i(2), t("}")
     },
@@ -474,7 +473,7 @@ s({trig = "'", name = "Subscript and superscript", snippetType = "autosnippet", 
 s({trig = "st", name = "Stacking", snippetType = "autosnippet"},
     {
 		f(function(_,snip) return snip.captures[1] end),
-        t("\\substack{"), v(1,"..."), t(" \\\\ "), i(2,"..."), t("}")
+        t("\\substack{"), i(1), t(" \\\\ "), i(2), t("}")
     },
     {condition = in_mathzone}
 ),
@@ -1176,7 +1175,7 @@ s({trig = "lm", name = "Limit", snippetType = "autosnippet"},
         c(1,
             {
                 {
-                    t("\\lim_{"), i(1,"..."), t(" \\to "), i(2,"..."), t("}")
+                    t("\\lim_{"), i(1), t(" \\to "), i(2), t("}")
                 },
                 {
 					i(1,"\\lim")
@@ -1193,7 +1192,7 @@ s({trig = "lif", name = "liminf", snippetType = "autosnippet"},
         c(1,
             {
                 {
-                    t("\\liminf_{"), i(1,"..."), t(" \\to "), i(2,"..."), t("}")
+                    t("\\liminf_{"), i(1), t(" \\to "), i(2), t("}")
                 },
                 {
 					i(1,"\\liminf")
@@ -1210,7 +1209,7 @@ s({trig = "lsu", name = "limsup", snippetType = "autosnippet"},
         c(1,
             {
                 {
-                    t("\\limsup_{"), i(1,"..."), t(" \\to "), i(2,"..."), t("}")
+                    t("\\limsup_{"), i(1), t(" \\to "), i(2), t("}")
                 },
                 {
 					i(1,"\\limsup")
@@ -1227,7 +1226,7 @@ s({trig = "lvf", name = "varliminf", snippetType = "autosnippet"},
         c(1,
             {
                 {
-                    t("\\varliminf_{"), i(1,"..."), t(" \\to "), i(2,"..."), t("}")
+                    t("\\varliminf_{"), i(1), t(" \\to "), i(2), t("}")
                 },
                 {
 					i(1,"\\varliminf")
@@ -1244,7 +1243,7 @@ s({trig = "lvu", name = "varlimsup", snippetType = "autosnippet"},
         c(1,
             {
                 {
-                    t("\\varlimsup_{"), i(1,"..."), t(" \\to "), i(2,"..."), t("}")
+                    t("\\varlimsup_{"), i(1), t(" \\to "), i(2), t("}")
                 },
                 {
 					i(1,"\\varlimsup")
@@ -1291,7 +1290,7 @@ s({trig = "co", name = "cos", snippetType = "autosnippet"},
     {condition = in_mathzone}
 ),
 
-s({trig = "tn", name = "tan", snippetType = "autosnippet"},
+s({trig = "tan", name = "tan", snippetType = "autosnippet"},
     {
 		f(function(_,snip) return snip.captures[1] end),
         t("\\tan")
@@ -1528,7 +1527,7 @@ s({trig = "gd", name = "Diagonal dots", snippetType = "autosnippet"},
 s({trig = "cln", name = "Colon", snippetType = "autosnippet"},
     {
 		f(function(_,snip) return snip.captures[1] end),
-        t("\\colon")
+        t(":")
     },
     {condition = in_mathzone}
 ),
@@ -1632,10 +1631,10 @@ s({trig = "da", name = "Pipes", snippetType = "autosnippet"},
         c(1,
             {
                 {
-                    t("\\left\\lvert"), d(1,get_visual), t(" \\right\\rvert")
+                    t("\\left\\lvert "), d(1,get_visual), t(" \\right\\rvert")
                 },
                 {
-                    t("\\lvert"), d(1,get_visual), t(" \\rvert")
+                    t("\\lvert "), d(1,get_visual), t(" \\rvert")
                 }
             }
         )
@@ -1649,10 +1648,10 @@ s({trig = "dn", name = "Double pipes", snippetType = "autosnippet"},
         c(1,
             {
                 {
-                    t("\\left\\lVert"), d(1,get_visual), t(" \\right\\rVert")
+                    t("\\left\\lVert "), d(1,get_visual), t(" \\right\\rVert")
                 },
                 {
-                    t("\\lVert"), d(1,get_visual), t(" \\rVert")
+                    t("\\lVert "), d(1,get_visual), t(" \\rVert")
                 }
             }
         )
@@ -1760,7 +1759,7 @@ s({trig = "tkn", name = "Negative thick space", snippetType = "autosnippet"},
 s({trig = "hs", name = "Horizontal space", snippetType = "autosnippet"},
     {
 		f(function(_,snip) return snip.captures[1] end),
-        t("\\hspace{"), i(1,"..."), t("}")
+        t("\\hspace{"), i(1), t("}")
     },
     {condition = in_mathzone}
 ),
@@ -1768,7 +1767,7 @@ s({trig = "hs", name = "Horizontal space", snippetType = "autosnippet"},
 s({trig = "vs", name = "Vertical space", snippetType = "autosnippet"},
     {
 		f(function(_,snip) return snip.captures[1] end),
-        t("\\vspace{"), i(1,"..."), t("}")
+        t("\\vspace{"), i(1), t("}")
     },
     {condition = in_mathzone}
 ),
@@ -1818,16 +1817,7 @@ s({trig = "[.]d", name = "Lowercase delta", snippetType = "autosnippet", regTrig
 s({trig = "[.]e", name = "Epsilon", snippetType = "autosnippet", regTrig = true},
     {
 		f(function(_,snip) return snip.captures[1] end),
-        c(1,
-            {
-                {
-                    i(1,"\\varepsilon")
-                },
-                {
-                    i(1,"\\epsilon")
-                }
-            }
-        )
+		t("\\varepsilon")
     },
     {condition = in_mathzone}
 ),
@@ -1931,16 +1921,7 @@ s({trig = "[.]Ph", name = "Uppercase phi", snippetType = "autosnippet", regTrig 
 s({trig = "[.]ph", name = "Lowecase phi", snippetType = "autosnippet", regTrig = true},
     {
 		f(function(_,snip) return snip.captures[1] end),
-        c(1,
-            {
-                {
-                    i(1,"\\phi")
-                },
-                {
-                    i(1,"\\varphi")
-                }
-            }
-        )
+		t("\\phi")
     },
     {condition = in_mathzone}
 ),
@@ -2205,12 +2186,11 @@ s({trig = "nb", name = "Nabla", snippetType = "autosnippet"},
     {condition = in_mathzone}
 ),
 
-s({trig = "ch", name = "Section symbol", snippetType = "autosnippet"},
+s({trig = "ch", name = "Section symbol"},
     {
 		f(function(_,snip) return snip.captures[1] end),
         t("\\S")
-    },
-    {condition = in_mathzone}
+    }
 ),
 
 -- Accents
@@ -2583,7 +2563,16 @@ s({trig = "to", name = "Long maps to", snippetType = "autosnippet"},
 s({trig = "sm", name = "Subscript sum", snippetType = "autosnippet"},
     {
 		f(function(_,snip) return snip.captures[1] end),
-        t("\\sum_{"), i(1), t("}")
+		c(1,
+		    {
+		        {
+        			t("\\sum_{"), i(1), t("}")
+		        },
+		        {
+        			i(1,"\\sum")
+		        }
+		    }
+		)
     },
     {condition = in_mathzone}
 ),
@@ -2617,7 +2606,16 @@ s({trig = "nos", name = "Definite o-sum", snippetType = "autosnippet"},
 s({trig = "sp", name = "Subscript product", snippetType = "autosnippet"},
     {
 		f(function(_,snip) return snip.captures[1] end),
-        t("\\prod_{"), i(1), t("}")
+		c(1,
+		    {
+		        {
+        			t("\\prod_{"), i(1), t("}")
+		        },
+		        {
+        			i(1,"\\prod")
+		        }
+		    }
+		)
     },
     {condition = in_mathzone}
 ),
@@ -2651,7 +2649,7 @@ s({trig = "nop", name = "Definite o-product", snippetType = "autosnippet"},
 s({trig = "df", name = "Differential", snippetType = "autosnippet"},
     {
 		f(function(_,snip) return snip.captures[1] end),
-        t("\\dx")
+        t("\\dx{"), i(1), t("}")
     },
     {condition = in_mathzone}
 ),

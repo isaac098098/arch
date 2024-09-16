@@ -459,6 +459,7 @@ require("zen-mode").setup {
   		-- catppuccin-mocha
 		
         vim.cmd("highlight MsgArea guifg=#cdd6f4")
+        vim.cmd("highlight ModeMsg guifg=#cdd6f4")
 
   		-- nord
 		

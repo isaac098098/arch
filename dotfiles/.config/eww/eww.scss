@@ -197,7 +197,7 @@ $crust: #11111b;
 .battery_slider scale trough highlight {
   all: unset;
   background-color: $green;
-  border-radius: 7px;
+  border-radius: 5px 5px 5px 5px;
 }
 
 .battery_slider scale trough {
@@ -205,7 +205,7 @@ $crust: #11111b;
   background-color: $surface1;
   min-height: 50px;
   min-width: 20px;
-  border-radius: 5px 5px 0px 0px;
+  border-radius: 5px 5px 5px 5px;
 }
 
 .battery_box {

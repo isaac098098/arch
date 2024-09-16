@@ -1,5 +1,4 @@
 return{
-
 s(
     {trig = "phy-art", dscr = "Physics article"},
     fmta(
@@ -1003,5 +1002,4 @@ s(
     }
     )
 ),
-
 }
