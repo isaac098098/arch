@@ -282,6 +282,8 @@ inoremap oi <Esc>
 
 nmap j gj
 nmap k gk
+nmap tt gt
+nmap T gT
 nmap <CR> :write<CR>
 
 " Select
