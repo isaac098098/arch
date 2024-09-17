@@ -423,3 +423,8 @@ Buscar paquetes perdidos en instalación incompleta o rota
 ### Wayland
 ```pacman -S iio-sensor-proxy```
 ```paru iio-hyprland-git```
+
+## Mirrors
+Use `reflector` to update mirrors.
+pacman -S archlinux-keyring
+pacman-key --refresh-keys
