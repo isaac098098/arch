@@ -120,7 +120,8 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f exec --no-startup-id i3-msg fullscreen toggle && eww open --toggle catppuccin
+#bindsym $mod+f exec --no-startup-id i3-msg fullscreen toggle && eww open --toggle catppuccin
+bindsym $mod+f exec --no-startup-id i3-msg fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -243,8 +244,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 default_border pixel 3
 default_floating_border pixel 0
 
-exec_always --no-startup-id feh --bg-scale $HOME/Documents/images/wallpapers/wavy_lines_v01_5120x2880.png
-exec --no-startup-id eww open catppuccin
+exec_always --no-startup-id feh --bg-scale $HOME/Documents/images/wallpapers/lavender.png
+#exec --no-startup-id eww open catppuccin
 exec --no-startup-id xset s off
 exec --no-startup-id xset -dpms 
 
@@ -262,7 +263,13 @@ focus_on_window_activation none
 
 smart_borders on
 
-gaps inner 15
-gaps left 63
+#normal shadow
+gaps inner 30
+
+#solid shadow
+#gaps inner 40
+
+#gaps inner 15
+#gaps left 63
 
 for_window [class="Gnome-pomodoro"] floating enable
