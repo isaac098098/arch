@@ -231,12 +231,12 @@ bindsym $mod+r mode "resize"
 
 # Colors
 # 						Border 		Background	    Text 		    Indicator 	Child Border
-client.focused 			$lavender	$lavender		$lavender		$lavender   $lavender
-client.focused_inactive	$lavender 	$lavender		$lavender 	    $crust		$crust
+client.focused 			$blue       $blue		    $blue		    $blue       $blue
+client.focused_inactive	$blue       $blue		    $blue 	        $crust		$crust
 client.unfocused		$base 	    $base		    $base 	        $crust		$crust
 client.urgent			$red 	    $red 	        $red 	        $crust	    $crust
-client.placeholder 		$lavender	$lavender		$lavender		$lavender   $lavender
-client.background 		$lavender	$lavender		$lavender		$lavender   $lavender
+client.placeholder 		$blue	    $blue		    $blue		    $blue       $blue
+client.background 		$blue	    $blue		    $blue		    $blue       $blue
 
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 5%+
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
@@ -244,7 +244,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 default_border pixel 3
 default_floating_border pixel 0
 
-exec_always --no-startup-id feh --bg-scale $HOME/Documents/images/wallpapers/lavender.png
+exec_always --no-startup-id feh --bg-scale $HOME/Documents/images/wallpapers/blue.png
 #exec --no-startup-id eww open catppuccin
 exec --no-startup-id xset s off
 exec --no-startup-id xset -dpms 
@@ -271,5 +271,7 @@ gaps inner 30
 
 #gaps inner 15
 #gaps left 63
+
+#smart_gaps on
 
 for_window [class="Gnome-pomodoro"] floating enable

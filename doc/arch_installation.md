@@ -426,5 +426,8 @@ Buscar paquetes perdidos en instalación incompleta o rota
 
 ## Mirrors
 Use `reflector` to update mirrors.
-pacman -S archlinux-keyring
-pacman-key --refresh-keys
+`ipacman -S archlinux-keyring`
+`pacman-key --refresh-keys`
+
+## Fix missing libalpm
+`sudo cp /usr/lib/libalpm.so.14 /usr/lib/libalpm.so.13`
