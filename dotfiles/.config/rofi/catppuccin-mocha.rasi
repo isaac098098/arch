@@ -16,9 +16,9 @@ element-text, element-icon , mode-switcher {
 
 window {
 	width: 25%;
-	height: 41%;
+	height: 39%;
     border: 0px;
-    border-radius: 0px;
+    border-radius: 12px;
     border-color: @border-col;
     background-color: rgba(30,30,46,0.7);
 }

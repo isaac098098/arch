@@ -264,7 +264,7 @@ focus_on_window_activation none
 smart_borders on
 
 #normal shadow
-gaps inner 30
+gaps inner 25
 
 #solid shadow
 #gaps inner 40

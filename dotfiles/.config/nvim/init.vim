@@ -308,8 +308,8 @@ set lbr
 
 " line number and indentation
 
-set nu
-set numberwidth=1
+"set nu
+"set numberwidth=1
 
 " Tabs
 iunmap <tab>
